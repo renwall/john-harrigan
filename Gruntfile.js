@@ -24,21 +24,21 @@ module.exports = function(grunt) {
                 src: '**/*.hbs'
             }
         },
-        concat: {
-            dist: {
-                src: [
-                    'src/js/libs/*.js',
-                    'src/js/global.js'
-                ],
-                dest: 'dist/js/production.js',
-            }
-        },
-        uglify: {
-            build: {
-                src: 'dist/js/production.js',
-                dest: 'dist/js/production.min.js'
-            }
-        },
+        // concat: {
+        //     dist: {
+        //         src: [
+        //             'src/js/libs/*.js',
+        //             'src/js/global.js'
+        //         ],
+        //         dest: 'dist/js/production.js',
+        //     }
+        // },
+        // uglify: {
+        //     build: {
+        //         src: 'dist/js/production.js',
+        //         dest: 'dist/js/production.min.js'
+        //     }
+        // },
         less: {
             development: {
                 options: {
@@ -57,10 +57,10 @@ module.exports = function(grunt) {
                 files: ['**/*.hbs'],
                 tasks: ['assemble']
             },
-            scripts: {
-                files: ['js/*.js'],
-                tasks: ['concat', 'uglify']
-            },
+            // scripts: {
+            //     files: ['js/*.js'],
+            //     tasks: ['concat', 'uglify']
+            // },
             styles: {
                 files: ['**/*.less'],
                 tasks: ['less']
@@ -70,5 +70,6 @@ module.exports = function(grunt) {
 
     grunt.loadNpmTasks('assemble');
 
-    grunt.registerTask('default', ['assemble', 'less', 'concat', 'uglify', 'watch']);
+    grunt.registerTask('default', ['assemble', 'less', 'watch']);
+    // grunt.registerTask('default', ['assemble', 'less', 'concat', 'uglify', 'watch']);
 };
