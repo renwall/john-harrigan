@@ -1,0 +1,22 @@
+// Clearfix 
+.cf {
+	&:before, &:after {
+		content: "";
+		display: table;
+	}
+	&:after { clear: both; }
+}  
+
+// Visually hidden but available to screen readers
+.visually-hidden {
+ 	position: absolute !important;
+	height: 1px; width: 1px;
+	overflow: hidden;
+	clip: rect(1px, 1px, 1px, 1px);
+}
+
+.truncate {
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}

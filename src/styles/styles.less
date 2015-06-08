@@ -1,0 +1,67 @@
+@import 'variables.less';
+@import 'utils.less';
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+* + * {
+    margin-top: 1.5em;
+}
+html {
+    overflow-y: scroll;
+    height: 100%;
+    // font-size: 62.5%;
+    box-sizing: border-box;
+    // padding: 0;
+    // margin: 0;
+}
+body {
+ 	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+  	background: @grey50;
+  	// font-size: 16px;
+  	// font-size: 1.6rem;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+}
+article, aside, details, figcaption, figure, footer, header, menu, nav, section, summary {
+    display: block;
+}
+a {
+    background-color: transparent;
+}
+strong {
+    font-weight: bold;
+}
+small {
+    // font-size: 80%;
+}
+figure {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+img {
+    border: 0;
+    height: auto;
+    width: 100%;
+}
+p + p {
+    margin-top: 0;
+}
+h1  {
+    // font-size: 24px;
+    // font-size: 2.4rem;
+}
+
+.header {
+    font-weight: 300;
+    text-transform: uppercase;
+}
+
+
+@media (min-width: @testBreakpoint) {
+   html {
+   		background: url('https://placekitten.com/g/200/300');
+   }
+}
