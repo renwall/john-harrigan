@@ -12,8 +12,6 @@ html {
     height: 100%;
     // font-size: 62.5%;
     box-sizing: border-box;
-    // padding: 0;
-    // margin: 0;
 }
 body {
  	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
@@ -34,12 +32,24 @@ strong {
     font-weight: bold;
 }
 small {
-    // font-size: 80%;
+    
 }
 figure {
+    background: no-repeat 50% 50%;
+    background-position: center;
+}
+img, hr {
+    border: 0;
+}
+img {
+    vertical-align: middle;
+    height: auto;
     width: 100%;
+}
+figure {
+    // width: 100%;
     margin: 0;
-    padding: 0;
+    // padding: 0;
 }
 img {
     border: 0;
@@ -60,8 +70,110 @@ h1  {
 }
 
 
+
+
+
+
+.cb-slideshow {
+    position: relative;
+    background: #000;
+    padding-top: 44.42%;
+}
+
+.cb-slideshow li .slideshow--item img {
+    animation: 36s linear 0s normal none infinite running imageAnimation;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    z-index: 0;
+}
+.cb-slideshow li .slideshow--item figcaption {
+    animation: 36s linear 0s normal none infinite running titleAnimation;
+    color: red;
+    position: absolute;
+    left: 0;
+    bottom: 1.5em;
+    // bottom: 2em;
+    opacity: 0;
+    text-align: center;
+    width: 100%;
+    z-index: 1;
+    // height: 100%;
+}
+.cb-slideshow li:nth-child(2) .slideshow--item img {
+    animation-delay: 6s;
+}
+.cb-slideshow li:nth-child(3) .slideshow--item img {
+    animation-delay: 12s;
+}
+.cb-slideshow li:nth-child(4) .slideshow--item img {
+    animation-delay: 18s;
+}
+.cb-slideshow li:nth-child(5) .slideshow--item img {
+    animation-delay: 24s;
+}
+.cb-slideshow li:nth-child(6) .slideshow--item img {
+    animation-delay: 30s;
+}
+.cb-slideshow li:nth-child(2) .slideshow--item figcaption {
+    animation-delay: 6s;
+}
+.cb-slideshow li:nth-child(3) .slideshow--item figcaption {
+    animation-delay: 12s;
+}
+.cb-slideshow li:nth-child(4) .slideshow--item figcaption {
+    animation-delay: 18s;
+}
+.cb-slideshow li:nth-child(5) .slideshow--item figcaption {
+    animation-delay: 24s;
+}
+.cb-slideshow li:nth-child(6) .slideshow--item figcaption {
+    animation-delay: 30s;
+}
+@keyframes imageAnimation {
+    0% {
+        animation-timing-function: ease-in;
+        opacity: 0;
+    }
+    8% {
+        animation-timing-function: ease-out;
+        opacity: 1;
+    }
+    17% {
+        opacity: 1;
+    }
+    25% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+@keyframes titleAnimation {
+    0% {
+        opacity: 0;
+    }
+    8% {
+        opacity: 1;
+    }
+    17% {
+        opacity: 1;
+    }
+    19% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+// .no-cssanimations .cb-slideshow li span {
+//     opacity: 1;
+// }
+
+
 @media (min-width: @testBreakpoint) {
    html {
-   		background: url('https://placekitten.com/g/200/300');
+   		// background: url('https://placekitten.com/g/200/300');
    }
 }

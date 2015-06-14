@@ -5,8 +5,9 @@ headerStrong: 'Harrigan'
 ---
 
 {{> head}}
-{{> hero}}
-
-<p>I am the home page</p>
-
+	<header>
+		<h1 class="header">{{header}} <strong>{{headerStrong}}</strong></h1>
+	</header>
+	{{> hero}}
+	<p>I am the home page</p>
 {{> footer}}
