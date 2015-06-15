@@ -49,7 +49,6 @@ img {
 figure {
     // width: 100%;
     margin: 0;
-    // padding: 0;
 }
 img {
     border: 0;
@@ -63,111 +62,102 @@ h1  {
     // font-size: 24px;
     // font-size: 2.4rem;
 }
-
 .header {
     font-weight: 300;
     text-transform: uppercase;
 }
 
-
-
-
-
-
-.cb-slideshow {
+//slideshow layout
+.slideshow {
     position: relative;
     background: #000;
     padding-top: 44.42%;
 }
-
-.cb-slideshow li .slideshow--item img {
-    animation: 36s linear 0s normal none infinite running imageAnimation;
+.slideshow li .slideshow--item img {
+    animation: 36s linear 0s normal none infinite running animateImage;
     position: absolute;
     left: 0;
     top: 0;
     opacity: 0;
     z-index: 0;
 }
-.cb-slideshow li .slideshow--item figcaption {
-    animation: 36s linear 0s normal none infinite running titleAnimation;
-    color: red;
+.slideshow:before {
+    content: url('../assets/fp_logo_nav.jpg');
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+.slideshow li .slideshow--item figcaption {
+    animation: 36s linear 0s normal none infinite running animateCaption;
+    color: @grey50;
     position: absolute;
     left: 0;
-    bottom: 1.5em;
-    // bottom: 2em;
+    bottom: 0;
     opacity: 0;
     text-align: center;
     width: 100%;
     z-index: 1;
-    // height: 100%;
+    font-size: 72px;
 }
-.cb-slideshow li:nth-child(2) .slideshow--item img {
+
+//slideshow animation
+.slideshow li:nth-child(2) .slideshow--item img {
     animation-delay: 6s;
 }
-.cb-slideshow li:nth-child(3) .slideshow--item img {
+.slideshow li:nth-child(3) .slideshow--item img {
     animation-delay: 12s;
 }
-.cb-slideshow li:nth-child(4) .slideshow--item img {
+.slideshow li:nth-child(4) .slideshow--item img {
     animation-delay: 18s;
 }
-.cb-slideshow li:nth-child(5) .slideshow--item img {
+.slideshow li:nth-child(5) .slideshow--item img {
     animation-delay: 24s;
 }
-.cb-slideshow li:nth-child(6) .slideshow--item img {
+.slideshow li:nth-child(6) .slideshow--item img {
     animation-delay: 30s;
 }
-.cb-slideshow li:nth-child(2) .slideshow--item figcaption {
+.slideshow li:nth-child(2) .slideshow--item figcaption {
     animation-delay: 6s;
 }
-.cb-slideshow li:nth-child(3) .slideshow--item figcaption {
+.slideshow li:nth-child(3) .slideshow--item figcaption {
     animation-delay: 12s;
 }
-.cb-slideshow li:nth-child(4) .slideshow--item figcaption {
+.slideshow li:nth-child(4) .slideshow--item figcaption {
     animation-delay: 18s;
 }
-.cb-slideshow li:nth-child(5) .slideshow--item figcaption {
+.slideshow li:nth-child(5) .slideshow--item figcaption {
     animation-delay: 24s;
 }
-.cb-slideshow li:nth-child(6) .slideshow--item figcaption {
+.slideshow li:nth-child(6) .slideshow--item figcaption {
     animation-delay: 30s;
 }
-@keyframes imageAnimation {
+
+@keyframes animateImage {
     0% {
         animation-timing-function: ease-in;
         opacity: 0;
     }
-    8% {
+    3% {
         animation-timing-function: ease-out;
         opacity: 1;
     }
-    17% {
-        opacity: 1;
-    }
-    25% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 0;
-    }
+    17% { opacity: 1; }
+    25% { opacity: 0; }
+    100% { opacity: 0; }
 }
-@keyframes titleAnimation {
+
+@keyframes animateCaption {
     0% {
         opacity: 0;
     }
-    8% {
-        opacity: 1;
-    }
-    17% {
-        opacity: 1;
-    }
-    19% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 0;
-    }
+    7% { opacity: 1; }
+    17% { opacity: 1; }
+    19% { opacity: 0; }
+    100% { opacity: 0; }
 }
-// .no-cssanimations .cb-slideshow li span {
+// .no-cssanimations .slideshow li .slideshow--item img,
+// .no-cssanimations .slideshow li .slideshow--item figcaption {
 //     opacity: 1;
 // }
 
