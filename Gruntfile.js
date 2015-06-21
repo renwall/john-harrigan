@@ -41,13 +41,13 @@ module.exports = function(grunt) {
               }
             }
         },
-        // svgmin: {
-        //     dist: {
-        //         files: {
-        //             'dist/assets/icon-spritemap.svg': 'src/svg/icon-spritemap.svg'
-        //         }
-        //     }
-        // },
+        svg_cleaner: {
+            minifySvgs: {
+                files: {
+                    'dist/assets/': 'src/svg/icon-spritemap.svg'
+                }
+            }
+        },
         less: {
             development: {
                 options: {
@@ -73,15 +73,15 @@ module.exports = function(grunt) {
             styles: {
                 files: ['**/*.less'],
                 tasks: ['less']
+            },
+            svg: {
+                files: ['svg/*.svg'],
+                tasks: ['svg_cleaner']
             }
-            // icons: {
-            //     files: ['**/*.svg'],
-            //     tasks: ['svgmin']
-            // }
         }
     });
 
     grunt.loadNpmTasks('assemble');
 
-    grunt.registerTask('default', ['assemble', 'less', 'concat', 'uglify', 'watch']);
+    grunt.registerTask('default', ['assemble', 'svg_cleaner', 'less', 'concat', 'uglify', 'watch']);
 };
