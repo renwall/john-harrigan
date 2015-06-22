@@ -24,11 +24,53 @@ social:
   - url: 'https://instagram.com/johnharrigan/?hl=en'
     title: 'Instagram'
     id: 'icon-instagram'
+affiliate:
+  - url: '/'
+    title: 'Contact'
+  - url: 'http://www.foolishpeople.com/'
+    title: 'FoolishPeople'
+  - url: 'http://www.strangefactories.com/'
+    title: 'Strange Factories'
+  - url: '/'
+    title: 'Resume'
+project:
+  - url: '/'
+    title: 'Project'
+    src: 'https://scontent.cdninstagram.com/hphotos-xfa1/t51.2885-15/e15/11324267_678616528909224_1895882165_n.jpg'
+    alt: 'alt'
+  - url: '/'
+    title: 'Project'
+    src: 'https://scontent.cdninstagram.com/hphotos-xfa1/t51.2885-15/e15/11324267_678616528909224_1895882165_n.jpg'
+    alt: 'alt'
+  - url: '/'
+    title: 'Project'
+    src: 'https://scontent.cdninstagram.com/hphotos-xfa1/t51.2885-15/e15/11324267_678616528909224_1895882165_n.jpg'
+    alt: 'alt'
+  - url: '/'
+    title: 'Project'
+    src: 'https://scontent.cdninstagram.com/hphotos-xfa1/t51.2885-15/e15/11324267_678616528909224_1895882165_n.jpg'
+    alt: 'alt'
+  - url: '/'
+    title: 'Project'
+    src: 'https://scontent.cdninstagram.com/hphotos-xfa1/t51.2885-15/e15/11324267_678616528909224_1895882165_n.jpg'
+  - url: '/'
+    title: 'Project'
+    src: 'https://scontent.cdninstagram.com/hphotos-xfa1/t51.2885-15/e15/11324267_678616528909224_1895882165_n.jpg'
+    alt: 'alt'
 ---
 
 {{> head}}
-{{> nav}}
-{{> hero}}
-<p>I am the home page</p>
-{{> footer}}
+<div role="banner">
+	<header>
+		<h1 class="header">{{header}} <strong>{{headerStrong}}</strong></h1>
+		<h2>by-line</h2>
+	</header>
+	{{> nav_social}}
+	{{> hero}}
+	{{> nav_affiliates}}
+</div>
+<div role="main">
+	{{> project}}
+	<p>I am the home page</p>
+	{{> footer}}
  

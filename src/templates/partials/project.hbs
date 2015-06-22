@@ -1,0 +1,15 @@
+<section class="project">
+	<h3 class="header">Featured <strong>Projects</strong></h3>
+	<div class="cf">
+		{{#each project}}
+		<div class="project--tile">
+			<a href="{{url}}">
+				<figure>
+				    <img src="{{src}}" alt="{{alt}}"/>
+				    <figcaption>{{title}}</figcaption>
+			    </figure>
+		    </a>
+	    </div>
+		{{/each}}
+	</div>
+</section>	
