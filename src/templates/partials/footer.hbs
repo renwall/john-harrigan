@@ -1,3 +1,43 @@
+---
+
+listItem:
+  - { url: '/', name: 'Contact', group: 'a' }
+  - { url: '/', name: 'Resume', group: 'a' }
+  - { url: 'http://www.foolishpeople.com/', name: 'FoolishPeople', group: 'a' }
+  - { url: 'http://www.strangefactories.com/', name: 'Strange Factories', group: 'a' }
+  - { url: 'https://www.facebook.com/asmadai', name: 'Facebook', id: 'icon-facebook', group: 'b' }
+  - { url: 'https://twitter.com/johnharrigan', name: 'Twitter', id: 'icon-twitter', group: 'b'}
+  - { url: 'https://vimeo.com/johnharrigan', name: 'Vimeo', id: 'icon-vimeo', group: 'b' }
+  - { url: 'http://www.harrigan.co/', name: 'Tumblr', id: 'icon-tumblr', group: 'b' }
+  - { url: 'https://uk.linkedin.com/in/johnlharrigan', name: 'LinkedIn', id: 'icon-linkedin', group: 'b' }
+  - { url: 'https://plus.google.com/+JohnHarrigan/posts', name: 'Google+', id: 'icon-googleplus', group: 'b'}
+  - { url: 'https://instagram.com/johnharrigan/?hl=en', name: 'Instagram', id: 'icon-instagram', group: 'b' }
+
+---
+
+			<footer class="footer" role ="contentinfo">
+				<section>
+					<h4>About John Harrigan</h4>
+					<ul class="no-bullet">
+					{{#each footer.listItem}}
+						{{#is group 'a'}}
+							{{>list_item}}
+						{{/is}}
+					{{/each}}
+					</ul>
+				</section>
+				<section>
+					<h4>Social</h4>
+					<ul class="no-bullet">
+					{{#each footer.listItem}}
+						 {{#is group 'b'}}
+							{{>list_item}}
+						{{/is}}
+					{{/each}}
+					</ul>
+				</section>
+				<p>&copy; <span class="current-year"></span> John Harrigan. Creative Commons license. Web design and development by <a href="http://www.reneewall.com/">Renee Wall</a>.</p>
+			</footer>
  		</div>
  	</body>
 </html>

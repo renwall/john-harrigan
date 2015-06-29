@@ -1,0 +1,10 @@
+{{#each tile}}
+<div class="tile fade">
+	<figure>
+	    <img src="{{src}}" alt="{{alt}}"/>
+	    <figcaption>{{title}}</figcaption>
+	    {{!-- more accessible than a wrapping anchor tag --}}
+	    <a href="{{url}}"></a>
+    </figure>
+</div>
+{{/each}}

@@ -1,39 +1,29 @@
 ---
+
 title: 'Index title'
 header: 'John'
 headerStrong: 'Harrigan'
+slide:
+  - { filename: 'jh_hero_01.jpg', alt: 'alt one', caption: 'Truth' }
+  - { filename: 'jh_hero_02.jpg', alt: 'alt two', caption: 'Manifestation' }
+  - { filename: 'jh_hero_03.jpg', alt: 'alt three', caption: 'Truth' }
+  - { filename: 'jh_hero_04.jpg', alt: 'alt four', caption: 'Ritual' }
+  - { filename: 'jh_hero_05.jpg', alt: 'alt five', caption: 'Journey' }
+  - { filename: 'jh_hero_03.jpg', alt: 'alt six', caption: 'Solve et Coagula' }
 social:
-  - url: 'https://www.facebook.com/asmadai'
-    title: 'Facebook'
-    id: 'icon-facebook'
-  - url: 'https://twitter.com/johnharrigan'
-    title: 'Twitter'
-    id: 'icon-twitter'
-  - url: 'https://vimeo.com/johnharrigan'
-    title: 'Vimeo'
-    id: 'icon-vimeo'
-  - url: 'http://www.harrigan.co/'
-    title: 'Tumblr'
-    id: 'icon-tumblr'
-  - url: 'https://uk.linkedin.com/in/johnlharrigan'
-    title: 'LinkedIn'
-    id: 'icon-linkedin'
-  - url: 'https://plus.google.com/+JohnHarrigan/posts'
-    title: 'Google+'
-    id: 'icon-googleplus'
-  - url: 'https://instagram.com/johnharrigan/?hl=en'
-    title: 'Instagram'
-    id: 'icon-instagram'
+  - { url: 'https://www.facebook.com/asmadai', title: 'Facebook', id: 'icon-facebook' }
+  - { url: 'https://twitter.com/johnharrigan', title: 'Twitter', id: 'icon-twitter' }
+  - { url: 'https://vimeo.com/johnharrigan', title: 'Vimeo', id: 'icon-vimeo' }
+  - { url: 'http://www.harrigan.co/', title: 'Tumblr', id: 'icon-tumblr' }
+  - { url: 'https://uk.linkedin.com/in/johnlharrigan', title: 'LinkedIn', id: 'icon-linkedin' }
+  - { url: 'https://plus.google.com/+JohnHarrigan/posts', title: 'Google+', id: 'icon-googleplus' }
+  - { url: 'https://instagram.com/johnharrigan/?hl=en', title: 'Instagram', id: 'icon-instagram' }
 affiliate:
-  - url: '/'
-    title: 'Contact'
-  - url: 'http://www.foolishpeople.com/'
-    title: 'FoolishPeople'
-  - url: 'http://www.strangefactories.com/'
-    title: 'Strange Factories'
-  - url: '/'
-    title: 'Resume'
-project:
+  - { url: '/', name: 'Contact' }
+  - { url: 'http://www.foolishpeople.com/', name: 'FoolishPeople' }
+  - { url: 'http://www.strangefactories.com/', name: 'Strange Factories' }
+  - { url: '/', name: 'Resume' }
+tile:
   - url: '/'
     title: 'Project'
     src: 'https://scontent.cdninstagram.com/hphotos-xfa1/t51.2885-15/e15/11324267_678616528909224_1895882165_n.jpg'
@@ -57,20 +47,104 @@ project:
     title: 'Project'
     src: 'https://scontent.cdninstagram.com/hphotos-xfa1/t51.2885-15/e15/11324267_678616528909224_1895882165_n.jpg'
     alt: 'alt'
+listItem:
+  - { name: 'Name01', url: '/', group: 'a' }
+  - { name: 'Name02', url: '/' , group: 'a' }
+  - { name: 'Name03' }
+  - { name: 'Name04', url: '/', group: 'a' }
+  - { name: 'Name05', url: '/', group: 'a' }
+  - { name: 'Name06', url: '/', group: 'a' }
+  - { name: 'Name07', url: '/', group: 'a' }
+  - { name: 'Name08', group: 'a' }
+  - { name: 'Name09', url: '/', group: 'a' }
+  - { name: 'Name10', url: '/', group: 'a' }
+  - { name: 'Name11', url: '/', group: 'b' }
+  - { name: 'Name12', url: '/', group: 'b' }
+  - { name: 'Name13', group: 'b' }
+  - { name: 'Name14', url: '/', group: 'b' }
+  - { name: 'Name15', url: '/', group: 'b' }
+  - { name: 'Name16', url: '/', group: 'b' }
+  - { name: 'Name17', url: '/', group: 'b' }
+  - { name: 'Name18', group: 'b' }
+  - { name: 'Name19', url: '/', group: 'b' }
+  - { name: 'Name20', url: '/', group: 'c' }
+  - { name: 'Name21', url: '/', group: 'c' }
+  - { name: 'Name22', url: '/', group: 'c' }
+  - { name: 'Name23', group: 'c' }
+  - { name: 'Name24', url: '/', group: 'c' }
+  - { name: 'Name25', url: '/', group: 'c' }
+  - { name: 'Name26', url: '/', group: 'c' }
+
 ---
 
 {{> head}}
 <div role="banner">
-	<header>
-		<h1 class="header">{{header}} <strong>{{headerStrong}}</strong></h1>
-		<h2>by-line</h2>
-	</header>
-	{{> nav_social}}
-	{{> hero}}
-	{{> nav_affiliates}}
+	<div class="header-main cf">
+		<header>
+			<h1 class="header-section">{{header}} <strong>{{headerStrong}}</strong></h1>
+			<h2>Art on the inside, blood on the outside.</h2>
+		</header>
+		{{> nav_social}}
+	</div>
+	{{> slideshow}}
+	<nav class="affiliates" role="navigation">
+		<ul class="no-bullet">
+		{{#each affiliate}}
+			{{>list_item}}
+		{{/each}}
+		</ul>
+	</nav>
 </div>
 <div role="main">
-	{{> project}}
-	<p>I am the home page</p>
+	<section class="constrained">
+		<h3 class="header-section">Featured <strong>Projects</strong></h3>
+		<div class="cf">
+			{{>tile}}
+		</div>
+	</section>	
+	<section>
+		<div class="about cf">
+			<figure class="about__image">
+            	<img src="https://scontent.cdninstagram.com/hphotos-xfa1/t51.2885-15/e15/11324267_678616528909224_1895882165_n.jpg" alt="alt text"/>
+        	</figure>
+        	<div class="about__bio">
+        		<h3 class="header-section">About <strong>John Harrigan</strong></h3>
+        		<p>Bacon ipsum dolor amet andouille doner pork, brisket corned beef strip steak pork loin t-bone meatloaf shoulder. Porchetta pastrami meatloaf t-bone. Ball tip jowl ribeye meatball pig, picanha alcatra cupim ham hock porchetta pork chop flank leberkas fatback. T-bone bacon pastrami biltong, turducken spare ribs meatball venison drumstick. Shoulder short loin fatback picanha turkey meatloaf spare ribs meatball prosciutto pork kielbasa tongue. Porchetta pork loin flank, boudin chuck shankle turkey ribeye frankfurter spare ribs tri-tip picanha brisket ground round tenderloin. Capicola pork ball tip chicken ham hock spare ribs leberkas.</p>
+        		<div class="about--callout">
+					<h3 class="header-section">Artist's <strong>Statement</strong></h3>
+					<p>Turducken cupim spare ribs venison hamburger porchetta tongue meatball tenderloin short loin. Kielbasa jerky pork belly pancetta, ball tip cupim tail pork. Ground round turkey shankle swine. Spare ribs pastrami brisket short ribs fatback.</p>
+        		</div>
+        	</div>
+		</div>
+	</section>
+	<section class="constrained">
+		<h3 class="header-section">
+			<strong>Chronology</strong>
+		</h3>
+		<div class="chronology cf">
+			<ul class="no-bullet">
+			{{#each listItem}}
+				{{#is group 'a'}}
+					{{>list_item}}
+				{{/is}}
+			{{/each}}
+			</ul>
+			<ul class="no-bullet">
+			{{#each listItem}}
+				 {{#is group 'b'}}
+					{{>list_item}}
+				{{/is}}
+			{{/each}}
+			</ul>
+			<ul class="no-bullet">
+			{{#each listItem}}
+				 {{#is group 'c'}}
+				 	{{>list_item}}
+				{{/is}}
+			{{/each}}
+			</ul>
+		</div>
+	</section>
+	{{> back_to_top}}
 	{{> footer}}
  

@@ -1,6 +1,8 @@
 module.exports = function(grunt) {
     'use strict';
 
+    // tod do: jslint and accessibility audit
+
     require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
 
     grunt.initConfig({
@@ -27,17 +29,16 @@ module.exports = function(grunt) {
         concat: {
             dist: {
                 src: [
-                    // 'src/js/libs/*.js',
-                    // 'src/js/global.js'
-                    'src/js/svg4everybody.js'
+                    'src/js/libs/*.js',
+                    'src/js/global.js'
                 ],
-                dest: 'dist/js/production.js'
+                dest: 'dist/js/bundled.js'
             }
         },
         uglify: {
             my_target: {
               files: {
-                'dist/js/production.min.js': ['dist/js/production.js']
+                'dist/js/bundled.min.js': ['dist/js/bundled.js']
               }
             }
         },
@@ -67,7 +68,7 @@ module.exports = function(grunt) {
                 tasks: ['assemble']
             },
             scripts: {
-                files: ['js/*.js'],
+                files: ['src/js/*.js'],
                 tasks: ['concat', 'uglify']
             },
             styles: {

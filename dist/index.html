@@ -3,13 +3,10 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		
-		<link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600' rel='stylesheet' type='text/css'>
-		
+		<link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,700,900' rel='stylesheet' type='text/css'>
     	<meta charset="utf-8" />
     	<title>Index title</title>
-    	<script src="js/modernizr.min.js" async defer></script>
-    	<script src="js/svg4everybody.min.js" async defer></script>
+    	<script src="js/bundled.min.js" async defer></script>
     	<link rel="stylesheet" type="text/css" href="styles/styles.css">
 		<meta name="author" content="Renee Wall, www.reneewall.com"/>
 		<meta property="og:description" content=""/>
@@ -23,14 +20,15 @@
   	<body>
 
 <div role="banner">
-	<header>
-		<h1 class="header">John <strong>Harrigan</strong></h1>
-		<h2>by-line</h2>
-	</header>
-	<nav class="social" role="navigation">
+	<div class="header-main cf">
+		<header>
+			<h1 class="header-section">John <strong>Harrigan</strong></h1>
+			<h2>Art on the inside, blood on the outside.</h2>
+		</header>
+		<nav class="social" role="navigation">
 	<ul class="no-bullet">
 	
-		<li style="display:inline-block;width:3%;">
+		<li>
 			<a href="https://www.facebook.com/asmadai">
 				<svg role="img" title="Facebook" viewBox="0 0 64 64" class="icon">
 					<use xlink:href="assets/icon-spritemap.svg#icon-facebook"></use>
@@ -38,7 +36,7 @@
 			</a>
 		</li>
 	
-		<li style="display:inline-block;width:3%;">
+		<li>
 			<a href="https://twitter.com/johnharrigan">
 				<svg role="img" title="Twitter" viewBox="0 0 64 64" class="icon">
 					<use xlink:href="assets/icon-spritemap.svg#icon-twitter"></use>
@@ -46,7 +44,7 @@
 			</a>
 		</li>
 	
-		<li style="display:inline-block;width:3%;">
+		<li>
 			<a href="https://vimeo.com/johnharrigan">
 				<svg role="img" title="Vimeo" viewBox="0 0 64 64" class="icon">
 					<use xlink:href="assets/icon-spritemap.svg#icon-vimeo"></use>
@@ -54,7 +52,7 @@
 			</a>
 		</li>
 	
-		<li style="display:inline-block;width:3%;">
+		<li>
 			<a href="http://www.harrigan.co/">
 				<svg role="img" title="Tumblr" viewBox="0 0 64 64" class="icon">
 					<use xlink:href="assets/icon-spritemap.svg#icon-tumblr"></use>
@@ -62,7 +60,7 @@
 			</a>
 		</li>
 	
-		<li style="display:inline-block;width:3%;">
+		<li>
 			<a href="https://uk.linkedin.com/in/johnlharrigan">
 				<svg role="img" title="LinkedIn" viewBox="0 0 64 64" class="icon">
 					<use xlink:href="assets/icon-spritemap.svg#icon-linkedin"></use>
@@ -70,7 +68,7 @@
 			</a>
 		</li>
 	
-		<li style="display:inline-block;width:3%;">
+		<li>
 			<a href="https://plus.google.com/+JohnHarrigan/posts">
 				<svg role="img" title="Google+" viewBox="0 0 64 64" class="icon">
 					<use xlink:href="assets/icon-spritemap.svg#icon-googleplus"></use>
@@ -78,7 +76,7 @@
 			</a>
 		</li>
 	
-		<li style="display:inline-block;width:3%;">
+		<li>
 			<a href="https://instagram.com/johnharrigan/?hl=en">
 				<svg role="img" title="Instagram" viewBox="0 0 64 64" class="icon">
 					<use xlink:href="assets/icon-spritemap.svg#icon-instagram"></use>
@@ -89,132 +87,534 @@
 	</ul>
 </nav>	
 
+	</div>
 	<ul class="slideshow no-bullet" role="banner">
+    
     <li>
-    	<figure class="slideshow--item">
-	    	<img src="assets/jh_hero_01.jpg" alt="image of john harrigan"/>
-	    	<figcaption>one</figcaption>
-    	</figure>
+        <figure class="slideshow__item">
+            <img src="assets/jh_hero_01.jpg" alt="alt one"/>
+            <figcaption>Truth</figcaption>
+        </figure>
     </li>
+    
     <li>
-    	<figure class="slideshow--item">
-	    	<img src="assets/jh_hero_02.jpg" alt="image of john harrigan"/>
-	    	<figcaption>two</figcaption>
-    	</figure>
+        <figure class="slideshow__item">
+            <img src="assets/jh_hero_02.jpg" alt="alt two"/>
+            <figcaption>Manifestation</figcaption>
+        </figure>
     </li>
+    
     <li>
-    	<figure class="slideshow--item">
-	    	<img src="assets/jh_hero_03.jpg" alt="image of john harrigan"/>
-	    	<figcaption>three</figcaption>
-    	</figure>
+        <figure class="slideshow__item">
+            <img src="assets/jh_hero_03.jpg" alt="alt three"/>
+            <figcaption>Truth</figcaption>
+        </figure>
     </li>
+    
     <li>
-    	<figure class="slideshow--item">
-	    	<img src="assets/jh_hero_04.jpg" alt="image of john harrigan"/>
-	    	<figcaption>four</figcaption>
-    	</figure>
+        <figure class="slideshow__item">
+            <img src="assets/jh_hero_04.jpg" alt="alt four"/>
+            <figcaption>Ritual</figcaption>
+        </figure>
     </li>
+    
     <li>
-    	<figure class="slideshow--item">
-	    	<img src="assets/jh_hero_05.jpg" alt="image of john harrigan"/>
-	    	<figcaption>five</figcaption>
-    	</figure>
+        <figure class="slideshow__item">
+            <img src="assets/jh_hero_05.jpg" alt="alt five"/>
+            <figcaption>Journey</figcaption>
+        </figure>
     </li>
+    
     <li>
-    	<figure class="slideshow--item">
-	    	<img src="assets/jh_hero_04.jpg" alt="image of john harrigan"/>
-	    	<figcaption>six</figcaption>
-    	</figure>
+        <figure class="slideshow__item">
+            <img src="assets/jh_hero_03.jpg" alt="alt six"/>
+            <figcaption>Solve et Coagula</figcaption>
+        </figure>
     </li>
+    
 </ul>
 
 	<nav class="affiliates" role="navigation">
-	<ul class="no-bullet">
-	
-		<li>
-			<a href="/">Contact</a>
-		</li>
-	
-		<li>
-			<a href="http://www.foolishpeople.com/">FoolishPeople</a>
-		</li>
-	
-		<li>
-			<a href="http://www.strangefactories.com/">Strange Factories</a>
-		</li>
-	
-		<li>
-			<a href="/">Resume</a>
-		</li>
-	
-	</ul>
-</nav>	
-
+		<ul class="no-bullet">
+		
+			<li>
+	<a href="/" title="Contact">Contact</a>
+</li>
+		
+			<li>
+	<a href="http://www.foolishpeople.com/" title="FoolishPeople">FoolishPeople</a>
+</li>
+		
+			<li>
+	<a href="http://www.strangefactories.com/" title="Strange Factories">Strange Factories</a>
+</li>
+		
+			<li>
+	<a href="/" title="Resume">Resume</a>
+</li>
+		
+		</ul>
+	</nav>
 </div>
 <div role="main">
-	<section class="project">
-	<h3 class="header">Featured <strong>Projects</strong></h3>
-	<div class="cf">
-		
-		<div class="project--tile">
-			<a href="/">
-				<figure>
-				    <img src="https://scontent.cdninstagram.com/hphotos-xfa1/t51.2885-15/e15/11324267_678616528909224_1895882165_n.jpg" alt="alt"/>
-				    <figcaption>Project</figcaption>
-			    </figure>
-		    </a>
-	    </div>
-		
-		<div class="project--tile">
-			<a href="/">
-				<figure>
-				    <img src="https://scontent.cdninstagram.com/hphotos-xfa1/t51.2885-15/e15/11324267_678616528909224_1895882165_n.jpg" alt="alt"/>
-				    <figcaption>Project</figcaption>
-			    </figure>
-		    </a>
-	    </div>
-		
-		<div class="project--tile">
-			<a href="/">
-				<figure>
-				    <img src="https://scontent.cdninstagram.com/hphotos-xfa1/t51.2885-15/e15/11324267_678616528909224_1895882165_n.jpg" alt="alt"/>
-				    <figcaption>Project</figcaption>
-			    </figure>
-		    </a>
-	    </div>
-		
-		<div class="project--tile">
-			<a href="/">
-				<figure>
-				    <img src="https://scontent.cdninstagram.com/hphotos-xfa1/t51.2885-15/e15/11324267_678616528909224_1895882165_n.jpg" alt="alt"/>
-				    <figcaption>Project</figcaption>
-			    </figure>
-		    </a>
-	    </div>
-		
-		<div class="project--tile">
-			<a href="/">
-				<figure>
-				    <img src="https://scontent.cdninstagram.com/hphotos-xfa1/t51.2885-15/e15/11324267_678616528909224_1895882165_n.jpg" alt=""/>
-				    <figcaption>Project</figcaption>
-			    </figure>
-		    </a>
-	    </div>
-		
-		<div class="project--tile">
-			<a href="/">
-				<figure>
-				    <img src="https://scontent.cdninstagram.com/hphotos-xfa1/t51.2885-15/e15/11324267_678616528909224_1895882165_n.jpg" alt="alt"/>
-				    <figcaption>Project</figcaption>
-			    </figure>
-		    </a>
-	    </div>
-		
-	</div>
-</section>	
+	<section class="constrained">
+		<h3 class="header-section">Featured <strong>Projects</strong></h3>
+		<div class="cf">
+			
+<div class="tile fade">
+	<figure>
+	    <img src="https://scontent.cdninstagram.com/hphotos-xfa1/t51.2885-15/e15/11324267_678616528909224_1895882165_n.jpg" alt="alt"/>
+	    <figcaption>Project</figcaption>
+	    
+	    <a href="/"></a>
+    </figure>
+</div>
 
-	<p>I am the home page</p>
-	 		</div>
+<div class="tile fade">
+	<figure>
+	    <img src="https://scontent.cdninstagram.com/hphotos-xfa1/t51.2885-15/e15/11324267_678616528909224_1895882165_n.jpg" alt="alt"/>
+	    <figcaption>Project</figcaption>
+	    
+	    <a href="/"></a>
+    </figure>
+</div>
+
+<div class="tile fade">
+	<figure>
+	    <img src="https://scontent.cdninstagram.com/hphotos-xfa1/t51.2885-15/e15/11324267_678616528909224_1895882165_n.jpg" alt="alt"/>
+	    <figcaption>Project</figcaption>
+	    
+	    <a href="/"></a>
+    </figure>
+</div>
+
+<div class="tile fade">
+	<figure>
+	    <img src="https://scontent.cdninstagram.com/hphotos-xfa1/t51.2885-15/e15/11324267_678616528909224_1895882165_n.jpg" alt="alt"/>
+	    <figcaption>Project</figcaption>
+	    
+	    <a href="/"></a>
+    </figure>
+</div>
+
+<div class="tile fade">
+	<figure>
+	    <img src="https://scontent.cdninstagram.com/hphotos-xfa1/t51.2885-15/e15/11324267_678616528909224_1895882165_n.jpg" alt=""/>
+	    <figcaption>Project</figcaption>
+	    
+	    <a href="/"></a>
+    </figure>
+</div>
+
+<div class="tile fade">
+	<figure>
+	    <img src="https://scontent.cdninstagram.com/hphotos-xfa1/t51.2885-15/e15/11324267_678616528909224_1895882165_n.jpg" alt="alt"/>
+	    <figcaption>Project</figcaption>
+	    
+	    <a href="/"></a>
+    </figure>
+</div>
+
+
+		</div>
+	</section>	
+	<section>
+		<div class="about cf">
+			<figure class="about__image">
+            	<img src="https://scontent.cdninstagram.com/hphotos-xfa1/t51.2885-15/e15/11324267_678616528909224_1895882165_n.jpg" alt="alt text"/>
+        	</figure>
+        	<div class="about__bio">
+        		<h3 class="header-section">About <strong>John Harrigan</strong></h3>
+        		<p>Bacon ipsum dolor amet andouille doner pork, brisket corned beef strip steak pork loin t-bone meatloaf shoulder. Porchetta pastrami meatloaf t-bone. Ball tip jowl ribeye meatball pig, picanha alcatra cupim ham hock porchetta pork chop flank leberkas fatback. T-bone bacon pastrami biltong, turducken spare ribs meatball venison drumstick. Shoulder short loin fatback picanha turkey meatloaf spare ribs meatball prosciutto pork kielbasa tongue. Porchetta pork loin flank, boudin chuck shankle turkey ribeye frankfurter spare ribs tri-tip picanha brisket ground round tenderloin. Capicola pork ball tip chicken ham hock spare ribs leberkas.</p>
+        		<div class="about--callout">
+					<h3 class="header-section">Artist's <strong>Statement</strong></h3>
+					<p>Turducken cupim spare ribs venison hamburger porchetta tongue meatball tenderloin short loin. Kielbasa jerky pork belly pancetta, ball tip cupim tail pork. Ground round turkey shankle swine. Spare ribs pastrami brisket short ribs fatback.</p>
+        		</div>
+        	</div>
+		</div>
+	</section>
+	<section class="constrained">
+		<h3 class="header-section">
+			<strong>Chronology</strong>
+		</h3>
+		<div class="chronology cf">
+			<ul class="no-bullet">
+			
+				
+					<li>
+	<a href="/" title="Name01">Name01</a>
+</li>
+				
+			
+				
+					<li>
+	<a href="/" title="Name02">Name02</a>
+</li>
+				
+			
+				
+			
+				
+					<li>
+	<a href="/" title="Name04">Name04</a>
+</li>
+				
+			
+				
+					<li>
+	<a href="/" title="Name05">Name05</a>
+</li>
+				
+			
+				
+					<li>
+	<a href="/" title="Name06">Name06</a>
+</li>
+				
+			
+				
+					<li>
+	<a href="/" title="Name07">Name07</a>
+</li>
+				
+			
+				
+					<li>
+	Name08
+</li>
+				
+			
+				
+					<li>
+	<a href="/" title="Name09">Name09</a>
+</li>
+				
+			
+				
+					<li>
+	<a href="/" title="Name10">Name10</a>
+</li>
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+			</ul>
+			<ul class="no-bullet">
+			
+				 
+			
+				 
+			
+				 
+			
+				 
+			
+				 
+			
+				 
+			
+				 
+			
+				 
+			
+				 
+			
+				 
+			
+				 
+					<li>
+	<a href="/" title="Name11">Name11</a>
+</li>
+				
+			
+				 
+					<li>
+	<a href="/" title="Name12">Name12</a>
+</li>
+				
+			
+				 
+					<li>
+	Name13
+</li>
+				
+			
+				 
+					<li>
+	<a href="/" title="Name14">Name14</a>
+</li>
+				
+			
+				 
+					<li>
+	<a href="/" title="Name15">Name15</a>
+</li>
+				
+			
+				 
+					<li>
+	<a href="/" title="Name16">Name16</a>
+</li>
+				
+			
+				 
+					<li>
+	<a href="/" title="Name17">Name17</a>
+</li>
+				
+			
+				 
+					<li>
+	Name18
+</li>
+				
+			
+				 
+					<li>
+	<a href="/" title="Name19">Name19</a>
+</li>
+				
+			
+				 
+			
+				 
+			
+				 
+			
+				 
+			
+				 
+			
+				 
+			
+				 
+			
+			</ul>
+			<ul class="no-bullet">
+			
+				 
+			
+				 
+			
+				 
+			
+				 
+			
+				 
+			
+				 
+			
+				 
+			
+				 
+			
+				 
+			
+				 
+			
+				 
+			
+				 
+			
+				 
+			
+				 
+			
+				 
+			
+				 
+			
+				 
+			
+				 
+			
+				 
+			
+				 
+				 	<li>
+	<a href="/" title="Name20">Name20</a>
+</li>
+				
+			
+				 
+				 	<li>
+	<a href="/" title="Name21">Name21</a>
+</li>
+				
+			
+				 
+				 	<li>
+	<a href="/" title="Name22">Name22</a>
+</li>
+				
+			
+				 
+				 	<li>
+	Name23
+</li>
+				
+			
+				 
+				 	<li>
+	<a href="/" title="Name24">Name24</a>
+</li>
+				
+			
+				 
+				 	<li>
+	<a href="/" title="Name25">Name25</a>
+</li>
+				
+			
+				 
+				 	<li>
+	<a href="/" title="Name26">Name26</a>
+</li>
+				
+			
+			</ul>
+		</div>
+	</section>
+	<a href="/">
+	<span>Back to top</span>
+</a>
+
+	
+
+			<footer class="footer" role ="contentinfo">
+				<section>
+					<h4>About John Harrigan</h4>
+					<ul class="no-bullet">
+					
+						
+							<li>
+	<a href="/" title="Contact">Contact</a>
+</li>
+						
+					
+						
+							<li>
+	<a href="/" title="Resume">Resume</a>
+</li>
+						
+					
+						
+							<li>
+	<a href="http://www.foolishpeople.com/" title="FoolishPeople">FoolishPeople</a>
+</li>
+						
+					
+						
+							<li>
+	<a href="http://www.strangefactories.com/" title="Strange Factories">Strange Factories</a>
+</li>
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+					</ul>
+				</section>
+				<section>
+					<h4>Social</h4>
+					<ul class="no-bullet">
+					
+						 
+					
+						 
+					
+						 
+					
+						 
+					
+						 
+							<li>
+	<a href="https://www.facebook.com/asmadai" title="Facebook">Facebook</a>
+</li>
+						
+					
+						 
+							<li>
+	<a href="https://twitter.com/johnharrigan" title="Twitter">Twitter</a>
+</li>
+						
+					
+						 
+							<li>
+	<a href="https://vimeo.com/johnharrigan" title="Vimeo">Vimeo</a>
+</li>
+						
+					
+						 
+							<li>
+	<a href="http://www.harrigan.co/" title="Tumblr">Tumblr</a>
+</li>
+						
+					
+						 
+							<li>
+	<a href="https://uk.linkedin.com/in/johnlharrigan" title="LinkedIn">LinkedIn</a>
+</li>
+						
+					
+						 
+							<li>
+	<a href="https://plus.google.com/+JohnHarrigan/posts" title="Google+">Google+</a>
+</li>
+						
+					
+						 
+							<li>
+	<a href="https://instagram.com/johnharrigan/?hl=en" title="Instagram">Instagram</a>
+</li>
+						
+					
+					</ul>
+				</section>
+				<p>&copy; <span class="current-year"></span> John Harrigan. Creative Commons license. Web design and development by <a href="http://www.reneewall.com/">Renee Wall</a>.</p>
+			</footer>
+ 		</div>
  	</body>
 </html>
  
