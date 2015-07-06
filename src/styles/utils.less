@@ -25,3 +25,21 @@
 	list-style-type: none;
 	padding: 0;
 }
+
+.fade {
+    opacity: 1;
+    &:hover {
+    	opacity: 0.75;
+    }
+    transition: opacity 0.24s ease;
+}
+.page-gutter {
+	padding-right: (@defaultSpacing)/2;
+	padding-left: (@defaultSpacing)/2;
+}
+
+.constrain {
+    max-width: @maxContent;
+    margin: 0 auto;
+    padding: 0 (@defaultSpacing)/2;
+}
