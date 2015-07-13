@@ -1,10 +1,6 @@
 ---
 
 listItem:
-  - { url: '/', name: 'Contact', group: 'a' }
-  - { url: '/', name: 'Resume', group: 'a' }
-  - { url: 'http://www.foolishpeople.com/', name: 'FoolishPeople', group: 'a' }
-  - { url: 'http://www.strangefactories.com/', name: 'Strange Factories', group: 'a' }
   - { url: 'https://www.facebook.com/asmadai', name: 'Facebook', id: 'icon-facebook', group: 'b' }
   - { url: 'https://twitter.com/johnharrigan', name: 'Twitter', id: 'icon-twitter', group: 'b'}
   - { url: 'https://vimeo.com/johnharrigan', name: 'Vimeo', id: 'icon-vimeo', group: 'b' }
@@ -17,24 +13,17 @@ listItem:
 
 			<footer class="footer" role ="contentinfo">
 				<section>
-					<h4>About John Harrigan</h4>
-					<ul class="no-bullet">
-					{{#each footer.listItem}}
-						{{#is group 'a'}}
+					<h4 class="header-section">
+						<strong>Social</strong>
+					</h4>
+					<nav class="social-no-svg" role="navigation">
+						<ul class="no-bullet">
+						{{#each footer.listItem}}
 							{{>list_item}}
-						{{/is}}
-					{{/each}}
-					</ul>
-				</section>
-				<section>
-					<h4>Social</h4>
-					<ul class="no-bullet">
-					{{#each footer.listItem}}
-						 {{#is group 'b'}}
-							{{>list_item}}
-						{{/is}}
-					{{/each}}
-					</ul>
+						{{/each}}
+						</ul>
+					</nav>
+					{{> nav_social}}
 				</section>
 				<p>&copy; <span class="current-year"></span> John Harrigan. Creative Commons license. Web design and development by <a href="http://www.reneewall.com/">Renee Wall</a>.</p>
 			</footer>

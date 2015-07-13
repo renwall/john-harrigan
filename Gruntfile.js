@@ -9,14 +9,12 @@ module.exports = function(grunt) {
         pkg: grunt.file.readJSON('package.json'),
         assemble: {
             options: {
-                // layout: 'src/templates/layouts/',
                 layoutdir: 'src/templates/layouts',
                 partials: 'src/templates/partials/*.hbs',
                 assets: 'dist/assets'
             },
             index: {
-                // options: {layout: 'index.hbs'},
-                files: {'dist/index': ['src/pages/index.hbs' ]}
+                files: {'dist/index': ['src/pages/index.hbs']}
             },
             projects: {
                 options: {layout: 'project.hbs'},
