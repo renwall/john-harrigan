@@ -10,7 +10,7 @@
     margin-top: @defaultSpacing;
 }
 html {
-    font-size: 13px;
+    font-size: @baseFont - 2;
     overflow-y: scroll;
     height: 100%;
     box-sizing: border-box;
@@ -51,6 +51,13 @@ li {
 a {
     text-decoration: none;
     transition: color 0.24s ease;
+    &:link, &:visited {
+        color: @accent;
+    }
+    //to do: add .no-touch, check color contast
+    &:hover, &:focus, &:active {
+        color: @grey900;
+    }
 }
 
 .header-section {
@@ -65,7 +72,8 @@ a {
     * {
         margin-top: 0;
     }
-    padding: @defaultSpacing;
+    border-top: @defaultBorderWidth solid @accent;
+    padding: @defaultSpacing/2 @defaultSpacing;
     font-size: .9rem;
     display: flex;
     flex-flow: row wrap;
@@ -80,15 +88,6 @@ a {
         li {
             display: inline-block;
             margin-left: @defaultSpacing;
-            a {
-                &:link, &:visited {
-                    color: @grey900;
-                }
-                //to do: add .no-touch
-                &:hover, &:focus, &:active {
-                    color: @accent;
-                }
-            }
         }
     }
     h1 {
@@ -195,7 +194,7 @@ a {
     flex: 1 auto;
     width: 100%;
     margin-top: @defaultSpacing;
-    border-radius: 3px;
+    border-radius: @defaultBorderRadius;
     overflow: hidden;
     figure {
         position: relative;
@@ -208,7 +207,7 @@ a {
         background: @grey900;
         // to do: replace with grey900
         background: rgba(0, 0, 0, 0.8);
-        color: @grey50;
+        color: @grey100;
         text-align: center;
         text-transform: uppercase;
         padding: @defaultSpacing;
@@ -227,9 +226,7 @@ a {
     font-size: 1rem;
     display: flex;
     background: @grey900;
-    .header-section {
-        color: @grey50;
-    }
+    color: @grey100;  
 }
 .about-image {
     display: none;
@@ -237,9 +234,7 @@ a {
 .about-bio {
     padding: 0 @defaultSpacing @defaultSpacing @defaultSpacing;
     width: 100%;
-    color: @grey50;
     .header-section {
-        color: @grey50;
         & + p {
             margin-top: @defaultSpacing / 2;
         }
@@ -253,25 +248,31 @@ a {
 }
 
 .chronology {
+    font-size: 1rem;
+    background: @grey300;
+    border-radius: @defaultBorderRadius;
+    padding: @defaultSpacing;
+}
+.chronology-header {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
-    align-items: stretch;
-    background: @grey300;
-    border-radius: 3px;
-    ul {
-        padding: @defaultSpacing;
-        font-size: 1rem;
-        flex: 1 auto;
-        width: 100%;
-        &:not(:first-child) {
-            display: none;
-        }
-        li {
-            font-size: 1em;
-        }
+    align-items: center;
+    a {
+        margin-top: 0;
+        text-align: right;
     }
 }
+.chronology-list {
+    h4 {
+        font-weight: 700;
+        margin-bottom: @defaultSpacing;
+    }
+    ul li {
+        display: block;
+    }
+}
+
 .button {
     margin-left: @defaultSpacing;
     padding: @defaultSpacing;
@@ -287,25 +288,11 @@ a {
     bottom: 0;
 }
 
-.icon {
-    transition: fill 0.24s ease;
-    padding: .5px;
-    height: 100%;
-    fill: @grey50;
-    vertical-align: bottom;
-    &:hover {
-        fill: @accent;
-    }
-}
-
 .footer {
+    border-top: @defaultBorderWidth solid @accent;
     font-size: .8rem;
-    background: @grey600;
-    padding: @defaultSpacing;
-    color: #000;
-    nav {
-        margin-top: 0;
-    }
+    padding: 0 @defaultSpacing @defaultSpacing @defaultSpacing;
+    color: @grey600;
     h4 {
         font-weight: 700;
     }
@@ -315,29 +302,34 @@ a {
             margin-right: @defaultSpacing;
         }
     }
-    a {
-        &:link, &:visited {
-            color: #fff;
-        }
-        //to do: add .no-touch, check color contast
-        &:hover, &:focus, &:active {
-            color: @accent;
-        }
-    }
     p {
         margin-top: @defaultSpacing;
+    }
+}
+.icon {
+    transition: fill 0.24s ease;
+    padding: .5px;
+    height: 100%;
+    fill: @grey600;
+    vertical-align: bottom;
+    &:hover {
+        fill: @grey900;
     }
 }
 .svg {
     .social {
         display: block;
+        h4 {
+            display: none;
+        }
         ul {
             li, a {
                 width: 100%;
                 display: inline-block;
+                padding-right: @defaultSpacing;
             }
             li {
-                max-width: @defaultSpacing * 2;
+                max-width: @defaultSpacing * 4;
             }
         }
     }
@@ -369,11 +361,29 @@ a {
         width: 49%; // needed for safari
         max-width: 49%;
     }
+    .chronology-list {
+        h4 {
+            margin-bottom: 0;
+        }
+        & + .chronology-list {
+            margin-top: @defaultSpacing * 2;
+        }
+        ul li {
+            display: inline-block;
+            &:not(:last-child) {
+                margin-right: @defaultSpacing / 2;
+                &:after {
+                    content: '\2022';
+                    margin-left: @defaultSpacing / 2;
+                }
+            }
+        }
+    }   
 }
 
 @media only screen and (min-width: @minTablet) {
     html {
-        font-size: 15px;
+        font-size: @baseFont - 1;
     }
     .header-page nav {
         li:nth-child(3), li:last-child {
@@ -395,32 +405,14 @@ a {
     .about-bio {
         width: 67%;
     }
-    .chronology {
-        ul {
-            width: 49%;
-            max-width: 49%;
-            &:not(:last-child) {
-                display: block;
-            }
-        }
-    }
 }
 
 @media only screen and (min-width: @minDesktop) {
     html {
-        font-size: 16px;
+        font-size: @baseFont;
     }
     .slideshow-item figcaption {
         bottom: @defaultSpacing * 4.4;
         font-size: 4.4em;
-    }
-    .chronology {
-        ul {
-            width: 32.33%; // needed for safari
-            max-width: 32.33%;
-            &:last-child {
-                display: block;
-            }
-        }
     }
 }

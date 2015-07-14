@@ -12,19 +12,14 @@ listItem:
 ---
 
 			<footer class="footer" role ="contentinfo">
-				<section>
-					<h4 class="header-section">
-						<strong>Social</strong>
-					</h4>
-					<nav class="social-no-svg" role="navigation">
-						<ul class="no-bullet">
-						{{#each footer.listItem}}
-							{{>list_item}}
-						{{/each}}
-						</ul>
-					</nav>
-					{{> nav_social}}
-				</section>
+				<nav class="social-no-svg" role="navigation">
+					<ul class="no-bullet">
+					{{#each footer.listItem}}
+						{{>list_item}}
+					{{/each}}
+					</ul>
+				</nav>
+				{{> nav_social}}
 				<p>&copy; <span class="current-year"></span> John Harrigan. Creative Commons license. Web design and development by <a href="http://www.reneewall.com/">Renee Wall</a>.</p>
 			</footer>
  		</div>

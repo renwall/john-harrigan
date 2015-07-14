@@ -38,6 +38,12 @@
   margin-left: auto;
   padding: 0 1rem;
 }
+.show {
+  display: block!important;
+}
+.hide {
+  display: none!important;
+}
 *,
 *:before,
 *:after {
@@ -47,7 +53,7 @@
   margin-top: 1rem;
 }
 html {
-  font-size: 13px;
+  font-size: 14px;
   overflow-y: scroll;
   height: 100%;
   box-sizing: border-box;
@@ -113,6 +119,15 @@ a {
   text-decoration: none;
   transition: color 0.24s ease;
 }
+a:link,
+a:visited {
+  color: #af111c;
+}
+a:hover,
+a:focus,
+a:active {
+  color: #212121;
+}
 .header-section {
   font-weight: 100;
   text-transform: uppercase;
@@ -122,7 +137,8 @@ a {
   font-weight: 900;
 }
 .header-page {
-  padding: 1rem;
+  border-top: 4px solid #af111c;
+  padding: 0.5rem 1rem;
   font-size: .9rem;
   display: flex;
   flex-flow: row wrap;
@@ -142,15 +158,6 @@ a {
 .header-page nav li {
   display: inline-block;
   margin-left: 1rem;
-}
-.header-page nav li a:link,
-.header-page nav li a:visited {
-  color: #212121;
-}
-.header-page nav li a:hover,
-.header-page nav li a:focus,
-.header-page nav li a:active {
-  color: red;
 }
 .header-page h1 {
   font-size: 2em;
@@ -286,7 +293,7 @@ a {
   width: 100%;
   background: #212121;
   background: rgba(0, 0, 0, 0.8);
-  color: #fafafa;
+  color: #f5f5f5;
   text-align: center;
   text-transform: uppercase;
   padding: 1rem;
@@ -304,9 +311,7 @@ a {
   font-size: 1rem;
   display: flex;
   background: #212121;
-}
-.about .header-section {
-  color: #fafafa;
+  color: #f5f5f5;
 }
 .about-image {
   display: none;
@@ -314,10 +319,6 @@ a {
 .about-bio {
   padding: 0 1rem 1rem 1rem;
   width: 100%;
-  color: #fafafa;
-}
-.about-bio .header-section {
-  color: #fafafa;
 }
 .about-bio .header-section + p {
   margin-top: 0.5rem;
@@ -329,29 +330,32 @@ a {
   font-weight: 300;
 }
 .chronology {
+  font-size: 1rem;
+  background: #e0e0e0;
+  border-radius: 3px;
+  padding: 1rem;
+}
+.chronology-header {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
-  align-items: stretch;
-  background: #e0e0e0;
-  border-radius: 3px;
+  align-items: center;
 }
-.chronology ul {
-  padding: 1rem;
-  font-size: 1rem;
-  flex: 1 auto;
-  width: 100%;
+.chronology-header a {
+  margin-top: 0;
+  text-align: right;
 }
-.chronology ul:not(:first-child) {
-  display: none;
+.chronology-list h4 {
+  font-weight: 700;
+  margin-bottom: 1rem;
 }
-.chronology ul li {
-  font-size: 1em;
+.chronology-list ul li {
+  display: block;
 }
 .button {
   margin-left: 1rem;
   padding: 1rem;
-  background: red;
+  background: #af111c;
   display: inline-block;
 }
 .button span {
@@ -362,24 +366,11 @@ a {
   right: 1rem;
   bottom: 0;
 }
-.icon {
-  transition: fill 0.24s ease;
-  padding: .5px;
-  height: 100%;
-  fill: #fafafa;
-  vertical-align: bottom;
-}
-.icon:hover {
-  fill: red;
-}
 .footer {
+  border-top: 4px solid #af111c;
   font-size: .8rem;
-  background: #757575;
-  padding: 1rem;
-  color: #000;
-}
-.footer nav {
-  margin-top: 0;
+  padding: 0 1rem 1rem 1rem;
+  color: #757575;
 }
 .footer h4 {
   font-weight: 700;
@@ -390,28 +381,33 @@ a {
 .footer ul li:not(:last-child) {
   margin-right: 1rem;
 }
-.footer a:link,
-.footer a:visited {
-  color: #fff;
-}
-.footer a:hover,
-.footer a:focus,
-.footer a:active {
-  color: red;
-}
 .footer p {
   margin-top: 1rem;
 }
+.icon {
+  transition: fill 0.24s ease;
+  padding: .5px;
+  height: 100%;
+  fill: #757575;
+  vertical-align: bottom;
+}
+.icon:hover {
+  fill: #212121;
+}
 .svg .social {
   display: block;
+}
+.svg .social h4 {
+  display: none;
 }
 .svg .social ul li,
 .svg .social ul a {
   width: 100%;
   display: inline-block;
+  padding-right: 1rem;
 }
 .svg .social ul li {
-  max-width: 2rem;
+  max-width: 4rem;
 }
 .svg .social-no-svg {
   display: none;
@@ -438,6 +434,22 @@ a {
     width: 49%;
     max-width: 49%;
   }
+  .chronology-list h4 {
+    margin-bottom: 0;
+  }
+  .chronology-list + .chronology-list {
+    margin-top: 2rem;
+  }
+  .chronology-list ul li {
+    display: inline-block;
+  }
+  .chronology-list ul li:not(:last-child) {
+    margin-right: 0.5rem;
+  }
+  .chronology-list ul li:not(:last-child):after {
+    content: '\2022';
+    margin-left: 0.5rem;
+  }
 }
 @media only screen and (min-width: 45.375em) {
   html {
@@ -462,13 +474,6 @@ a {
   .about-bio {
     width: 67%;
   }
-  .chronology ul {
-    width: 49%;
-    max-width: 49%;
-  }
-  .chronology ul:not(:last-child) {
-    display: block;
-  }
 }
 @media only screen and (min-width: 60em) {
   html {
@@ -477,12 +482,5 @@ a {
   .slideshow-item figcaption {
     bottom: 4.4rem;
     font-size: 4.4em;
-  }
-  .chronology ul {
-    width: 32.33%;
-    max-width: 32.33%;
-  }
-  .chronology ul:last-child {
-    display: block;
   }
 }
