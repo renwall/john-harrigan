@@ -1,7 +1,11 @@
 @import 'variables.less';
 @import 'utils.less';
 
-//to do: optimize common styles into mixins
+// to do:
+// optimize common styles into mixins
+// rounded corners animate in safari, chrome on tile hover
+// add .no-touch to hover 
+
 
 *, *:before, *:after {
     box-sizing: inherit;
@@ -54,7 +58,6 @@ a {
     &:link, &:visited {
         color: @accent;
     }
-    //to do: add .no-touch, check color contast
     &:hover, &:focus, &:active {
         color: @grey900;
     }
@@ -192,7 +195,6 @@ a {
     font-size: .9rem;
     position: relative;
     flex: 1 auto;
-    width: 100%;
     margin-top: @defaultSpacing;
     border-radius: @defaultBorderRadius;
     overflow: hidden;
@@ -204,9 +206,6 @@ a {
         bottom: 0;
         left: 0;
         width: 100%;
-        background: @grey900;
-        // to do: replace with grey900
-        background: rgba(0, 0, 0, 0.8);
         color: @grey100;
         text-align: center;
         text-transform: uppercase;
@@ -274,63 +273,70 @@ a {
 }
 
 .button {
-    margin-left: @defaultSpacing;
-    padding: @defaultSpacing;
-    background: @accent;
+    padding: @defaultSpacing / 1.5;
     display: inline-block;
+    text-align: center;
+    font-size: .8rem;
     span {
         display: inline-block;
+        font-size: .8em;
+        text-transform: uppercase;
+        color: @grey300;
+        margin-top: @defaultSpacing / 1.5;
     }
 }
-.button-fixed {
+.back-to-top {
+    z-index: 2; 
+    transition: color fill 0.24s ease;
     position: fixed;
-    right: @defaultSpacing;
-    bottom: 0;
+    right: 0;
+    bottom: 20%;
+    border-radius: @defaultBorderRadius 0 0 @defaultBorderRadius;
+    box-shadow: 0 1px 2px rgba(0,0,0,.5);
+    &:hover {
+        span {
+            color: #fff;
+        }
+        .icon {
+            transition: none;
+            fill: #fff;
+        }
+    }
+    .icon {
+        display: block;
+        width: @defaultSpacing * 3;
+        margin: 0 auto;
+        fill: @grey300;
+    }
 }
 
 .footer {
-    border-top: @defaultBorderWidth solid @accent;
+    text-align: center;
+    border-top: @defaultBorderWidth/2 solid @grey700;
     font-size: .8rem;
     padding: 0 @defaultSpacing @defaultSpacing @defaultSpacing;
-    color: @grey600;
-    h4 {
-        font-weight: 700;
+    nav {
+        margin-top: 0;
     }
     ul li {
         display: inline-block;
-         &:not(:last-child) {
-            margin-right: @defaultSpacing;
-        }
-    }
-    p {
-        margin-top: @defaultSpacing;
+        margin: @defaultSpacing @defaultSpacing/2.25 @defaultSpacing/1.5 @defaultSpacing/2.25;
     }
 }
 .icon {
     transition: fill 0.24s ease;
-    padding: .5px;
     height: 100%;
-    fill: @grey600;
+    fill: @grey700;
     vertical-align: bottom;
     &:hover {
-        fill: @grey900;
+        fill: @grey800;
     }
 }
 .svg {
     .social {
         display: block;
-        h4 {
-            display: none;
-        }
-        ul {
-            li, a {
-                width: 100%;
-                display: inline-block;
-                padding-right: @defaultSpacing;
-            }
-            li {
-                max-width: @defaultSpacing * 4;
-            }
+        ul li, ul li a {
+            width: @defaultSpacing * 2;
         }
     }
     .social-no-svg {
@@ -338,7 +344,7 @@ a {
     }
 }
 .no-svg {
-    .social {
+    .social, .back-to-top .icon {
         display: none;
     }
     .social-no-svg {
@@ -358,8 +364,10 @@ a {
         font-size: 2.4em;
     }
     .tile {
-        width: 49%; // needed for safari
-        max-width: 49%;
+        flex: 1 1 calc(50% - @defaultSpacing * 2);
+        &:nth-child(odd) {
+            margin-right: @defaultSpacing;
+        }
     }
     .chronology-list {
         h4 {
@@ -378,7 +386,7 @@ a {
                 }
             }
         }
-    }   
+    } 
 }
 
 @media only screen and (min-width: @minTablet) {
@@ -395,8 +403,11 @@ a {
         bottom: @defaultSpacing * 3.4;
     }
     .tile {
-        width: 32.33%; // needed for safari
-        max-width: 32.33%;
+        flex: 1 1 calc(33.33% - @defaultSpacing * 2);
+        margin-right: @defaultSpacing;
+        &:nth-child(3), &:nth-child(6) {
+            margin-right: 0;
+        }
     }
     .about-image {
         width: 33%;

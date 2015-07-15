@@ -105,19 +105,22 @@ void 0===c?d&&"get"in d&&null!==(e=d.get(a,b))?e:(e=n.find.attr(a,b),null==e?voi
    		$htmlAndBody = $('html, body');
 
    	$showAll.on('click', function(event) {
+   		var that = this;
+
    		event.preventDefault();
    		isOpen = !isOpen;
 
    		if (isOpen === true) {
    			toggleText = 'Show less works';
-   			$earlierWorks.fadeIn().removeClass(hide).addClass(show);
+   			$earlierWorks.stop(true, true).fadeIn().removeClass(hide).addClass(show);
    		}
    		else {
    			toggleText = 'Show more works';
    			$earlierWorks.removeClass(show).addClass(hide);
    		}
 
-   		$showAll.text(toggleText);	
+   		$showAll.text(toggleText);
+   		that.blur();	
 	});
 
 	$backToTop.on('click', function(event) {

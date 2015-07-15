@@ -28,6 +28,10 @@
 .fade:hover {
   opacity: 0.75;
 }
+.overlay {
+  background: #212121;
+  background: rgba(0, 0, 0, 0.75);
+}
 .page-gutter {
   padding-right: 1rem;
   padding-left: 1rem;
@@ -278,7 +282,6 @@ a:active {
   font-size: .9rem;
   position: relative;
   flex: 1 auto;
-  width: 100%;
   margin-top: 1rem;
   border-radius: 3px;
   overflow: hidden;
@@ -291,8 +294,6 @@ a:active {
   bottom: 0;
   left: 0;
   width: 100%;
-  background: #212121;
-  background: rgba(0, 0, 0, 0.8);
   color: #f5f5f5;
   text-align: center;
   text-transform: uppercase;
@@ -353,66 +354,74 @@ a:active {
   display: block;
 }
 .button {
-  margin-left: 1rem;
-  padding: 1rem;
-  background: #af111c;
+  padding: 0.66666667rem;
   display: inline-block;
+  text-align: center;
+  font-size: .8rem;
 }
 .button span {
   display: inline-block;
+  font-size: .8em;
+  text-transform: uppercase;
+  color: #e0e0e0;
+  margin-top: 0.66666667rem;
 }
-.button-fixed {
+.back-to-top {
+  z-index: 2;
+  transition: color fill 0.24s ease;
   position: fixed;
-  right: 1rem;
-  bottom: 0;
+  right: 0;
+  bottom: 20%;
+  border-radius: 3px 0 0 3px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+.back-to-top:hover span {
+  color: #fff;
+}
+.back-to-top:hover .icon {
+  transition: none;
+  fill: #fff;
+}
+.back-to-top .icon {
+  display: block;
+  width: 3rem;
+  margin: 0 auto;
+  fill: #e0e0e0;
 }
 .footer {
-  border-top: 4px solid #af111c;
+  text-align: center;
+  border-top: 2px solid #616161;
   font-size: .8rem;
   padding: 0 1rem 1rem 1rem;
-  color: #757575;
 }
-.footer h4 {
-  font-weight: 700;
+.footer nav {
+  margin-top: 0;
 }
 .footer ul li {
   display: inline-block;
-}
-.footer ul li:not(:last-child) {
-  margin-right: 1rem;
-}
-.footer p {
-  margin-top: 1rem;
+  margin: 1rem 0.44444444rem 0.66666667rem 0.44444444rem;
 }
 .icon {
   transition: fill 0.24s ease;
-  padding: .5px;
   height: 100%;
-  fill: #757575;
+  fill: #616161;
   vertical-align: bottom;
 }
 .icon:hover {
-  fill: #212121;
+  fill: #424242;
 }
 .svg .social {
   display: block;
 }
-.svg .social h4 {
-  display: none;
-}
 .svg .social ul li,
-.svg .social ul a {
-  width: 100%;
-  display: inline-block;
-  padding-right: 1rem;
-}
-.svg .social ul li {
-  max-width: 4rem;
+.svg .social ul li a {
+  width: 2rem;
 }
 .svg .social-no-svg {
   display: none;
 }
-.no-svg .social {
+.no-svg .social,
+.no-svg .back-to-top .icon {
   display: none;
 }
 .no-svg .social-no-svg {
@@ -431,8 +440,10 @@ a:active {
     font-size: 2.4em;
   }
   .tile {
-    width: 49%;
-    max-width: 49%;
+    flex: 1 1 calc(48%);
+  }
+  .tile:nth-child(odd) {
+    margin-right: 1rem;
   }
   .chronology-list h4 {
     margin-bottom: 0;
@@ -464,8 +475,12 @@ a:active {
     bottom: 3.4rem;
   }
   .tile {
-    width: 32.33%;
-    max-width: 32.33%;
+    flex: 1 1 calc(31.33%);
+    margin-right: 1rem;
+  }
+  .tile:nth-child(3),
+  .tile:nth-child(6) {
+    margin-right: 0;
   }
   .about-image {
     width: 33%;
