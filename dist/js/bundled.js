@@ -104,7 +104,7 @@ void 0===c?d&&"get"in d&&null!==(e=d.get(a,b))?e:(e=n.find.attr(a,b),null==e?voi
    		$backToTop = $('#backToTop'),
    		$htmlAndBody = $('html, body'),
    		$window = $(window),
-   		$projectsHeader = $('#projectsHeader'),
+   		$projectsHeader = $('#projectHeader'),
    		scrollTop,
    		offsetTop,
    		currentDate,
@@ -139,10 +139,10 @@ void 0===c?d&&"get"in d&&null!==(e=d.get(a,b))?e:(e=n.find.attr(a,b),null==e?voi
     });
 
     $window.on('scroll', function() {
-    	offsetTop = $projectsHeader.offset().top;
-    	scrollTop = $window.scrollTop();
+      	offsetTop = $projectsHeader.offset().top;
+      	scrollTop = $window.scrollTop();
 
-    	if (scrollTop > offsetTop) {
+      	if (scrollTop > offsetTop) {
             $backToTop.removeClass(hide).addClass(show);
         }
         else {
@@ -157,9 +157,9 @@ void 0===c?d&&"get"in d&&null!==(e=d.get(a,b))?e:(e=n.find.attr(a,b),null==e?voi
 		currentYear = currentDate.getFullYear();
 
 		$currentYear.text(currentYear);
-	   	
+
 	   	return currentYear;
-	}
+	};
 
 	getCurrentYear();
 })();

@@ -1,0 +1,22 @@
+---
+
+listItem:
+  - { name: 'Contact', url: '/' }
+  - { name: 'R&eacute;sum&eacute', url: '/' }
+  - { name: 'FoolishPeople', url: 'http://www.foolishpeople.com/' }
+
+---
+
+<div class="header-page">
+    <nav role="navigation">
+        <ul class="no-bullet">
+        {{#each header.listItem}}
+            {{>list_item}}
+        {{/each}}
+        </ul>
+    </nav>
+    <header class="page-gutter">
+        <h1 class="header-section">John <strong>Harrigan</strong></h1>
+        <h2>Art on the inside, blood on the outside.</h2>
+    </header>
+</div>

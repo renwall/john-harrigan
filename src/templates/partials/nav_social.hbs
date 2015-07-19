@@ -1,6 +1,19 @@
+---
+
+social:
+  - { url: 'https://www.facebook.com/asmadai', title: 'Facebook', id: 'icon-facebook' }
+  - { url: 'https://twitter.com/johnharrigan', title: 'Twitter', id: 'icon-twitter' }
+  - { url: 'https://vimeo.com/johnharrigan', title: 'Vimeo', id: 'icon-vimeo' }
+  - { url: 'http://www.harrigan.co/', title: 'Tumblr', id: 'icon-tumblr' }
+  - { url: 'https://uk.linkedin.com/in/johnlharrigan', title: 'LinkedIn', id: 'icon-linkedin' }
+  - { url: 'https://plus.google.com/+JohnHarrigan/posts', title: 'Google+', id: 'icon-googleplus' }
+  - { url: 'https://instagram.com/johnharrigan/?hl=en', title: 'Instagram', id: 'icon-instagram' }
+
+---
+
 <nav class="social" role="navigation">
 	<ul class="no-bullet">
-	{{#each social}}
+	{{#each nav_social.social}}
 		<li>
 			<a href="{{{url}}}">
 				<svg role="img" title="{{title}}" viewBox="0 0 64 64" class="icon">

@@ -1,7 +1,9 @@
 module.exports = function(grunt) {
     'use strict';
 
-    // tod do: jslint and accessibility audit
+    // format is destination file: source file
+
+    // to do: jslint and accessibility audit
 
     require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
 
@@ -14,14 +16,35 @@ module.exports = function(grunt) {
                 assets: 'dist/assets'
             },
             index: {
-                files: {'dist/index': ['src/pages/index.hbs']}
+                files: {'dist/index': 'src/pages/index.hbs'}
             },
             projects: {
                 options: {layout: 'project.hbs'},
                 expand: true,
                 cwd: 'src/pages/projects/',
-                dest: 'dist/projects/',
+                dest: 'dist/',
                 src: '**/*.hbs'
+            }
+        },
+        prettify: {
+            options: {
+                indent: 4,
+                brace_style: 'expand'
+            },
+            all: {
+                expand: true,
+                cwd: 'dist/',
+                ext: '.html',
+                src: ['*.html'],
+                dest: 'dist/'
+            }
+        },
+        jshint: {
+            files: 'src/js/global.js',
+            options: {
+                globals: {
+                    jQuery: true
+                }
             }
         },
         concat: {
@@ -36,7 +59,7 @@ module.exports = function(grunt) {
         uglify: {
             my_target: {
               files: {
-                'dist/js/bundled.min.js': ['dist/js/bundled.js']
+                'dist/js/bundled.min.js': 'dist/js/bundled.js'
               }
             }
         },
@@ -50,12 +73,11 @@ module.exports = function(grunt) {
         less: {
             development: {
                 options: {
-                    // compress: true,
-                    // yuicompress: true,
-                    // optimization: 2
+                    compress: true,
+                    yuicompress: true,
+                    optimization: 2
                 },
                 files: {
-                    // destination file and source file
                     'dist/styles/styles.css': 'src/styles/styles.less'
                 }
             }
@@ -65,10 +87,9 @@ module.exports = function(grunt) {
                 browsers: ['> 0.5%', 'last 2 versions', 'Firefox ESR', 'Opera 12.1']
             },
             main: {
-                expand: true,
                 flatten: true,
                 files: {
-                    'dist/styles/styles_prefixed.css': 'dist/styles/styles.css'
+                    'dist/styles/styles.css': 'dist/styles/styles.css'
                 }
             }
         },
@@ -79,7 +100,7 @@ module.exports = function(grunt) {
             },
             scripts: {
                 files: ['src/js/*.js'],
-                tasks: ['concat', 'uglify']
+                tasks: ['jshint', 'concat', 'uglify']
             },
             styles: {
                 files: ['**/*.less'],
@@ -98,5 +119,5 @@ module.exports = function(grunt) {
 
     grunt.loadNpmTasks('assemble');
 
-    grunt.registerTask('default', ['assemble', 'svg_cleaner', 'less', 'concat', 'uglify', 'autoprefixer', 'watch']);
+    grunt.registerTask('default', ['assemble', 'prettify', 'svg_cleaner', 'less', 'jshint', 'concat', 'uglify', 'autoprefixer', 'watch']);
 };

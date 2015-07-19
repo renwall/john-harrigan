@@ -1,7 +1,6 @@
 ---
 
 title: 'John Harrigan'
-header: 'John <strong>Harrigan</strong>'
 slide:
   - { small: 'jh_hero_01_s.jpg', medium: 'jh_hero_01_m.jpg', large: 'jh_hero_01_l.jpg', alt: 'alt one', caption: 'truth' }
   - { small: 'jh_hero_02_s.jpg', medium: 'jh_hero_02_m.jpg', large: 'jh_hero_02_l.jpg', alt: 'alt two', caption: 'magick' }
@@ -9,25 +8,14 @@ slide:
   - { small: 'jh_hero_04_s.jpg', medium: 'jh_hero_04_m.jpg', large: 'jh_hero_04_l.jpg', alt: 'alt four', caption: 'journey' }
   - { small: 'jh_hero_05_s.jpg', medium: 'jh_hero_05_m.jpg', large: 'jh_hero_05_l.jpg', alt: 'alt five', caption: 'sincerity' }
   - { small: 'jh_hero_06_s.jpg', medium: 'jh_hero_06_m.jpg', large: 'jh_hero_06_l.jpg', alt: 'alt six', caption: 'passion' }
-social:
-  - { url: 'https://www.facebook.com/asmadai', title: 'Facebook', id: 'icon-facebook' }
-  - { url: 'https://twitter.com/johnharrigan', title: 'Twitter', id: 'icon-twitter' }
-  - { url: 'https://vimeo.com/johnharrigan', title: 'Vimeo', id: 'icon-vimeo' }
-  - { url: 'http://www.harrigan.co/', title: 'Tumblr', id: 'icon-tumblr' }
-  - { url: 'https://uk.linkedin.com/in/johnlharrigan', title: 'LinkedIn', id: 'icon-linkedin' }
-  - { url: 'https://plus.google.com/+JohnHarrigan/posts', title: 'Google+', id: 'icon-googleplus' }
-  - { url: 'https://instagram.com/johnharrigan/?hl=en', title: 'Instagram', id: 'icon-instagram' }
 tile:
-  - { title: 'The Wilderness Festival', url: '/', src: 'assets/jh_projects_01.jpg' }
-  - { title: 'Strange Factories', url: '/', src: 'assets/jh_projects_02.jpg' }
-  - { title: 'Virulent Experience', url: '/', src: 'assets/jh_projects_03.jpg' }
-  - { title: 'Ward 12 - The Basement', url: '/', src: 'assets/jh_projects_04.jpg' }
-  - { title: 'Cirxus', url: '/', src: 'assets/jh_projects_05.jpg' }
-  - { title: 'Dead Language', url: '/', src: 'assets/jh_projects_06.jpg' }
+  - { title: 'The Woods Trapped at the Edge of Midnight', url: 'the-woods-trapped-at-the-edge-of-midnight.html', src: 'assets/jh_projects_01.jpg' }
+  - { title: 'Strange Factories', url: 'strange-factories.html', src: 'assets/jh_projects_02.jpg' }
+  - { title: 'Virulent Experience', url: 'virulent-experience.html', src: 'assets/jh_projects_03.jpg' }
+  - { title: 'Ward 12 - The Basement', url: 'ward-12-the-basement.html', src: 'assets/jh_projects_04.jpg' }
+  - { title: 'Cirxus', url: 'cirxus.html', src: 'assets/jh_projects_05.jpg' }
+  - { title: 'Dead Language', url: 'dead-language.html', src: 'assets/jh_projects_06.jpg' }
 listItem:
-  - { name: 'Contact', url: '/', category: 'affiliate' }
-  - { name: 'R&eacute;sum&eacute', url: '/', category: 'affiliate' }
-  - { name: 'FoolishPeople', url: 'http://www.foolishpeople.com/', category: 'affiliate' }
   - { name: 'The Woods Trapped at the Edge of Midnight (2015)', category: 'chrono', group: 'recent' }
   - { name: 'Strange Factories (2013)', category: 'chrono', group: 'recent' }
   - { name: 'Virulent Experience (2012)', category: 'chrono', group: 'recent' }
@@ -61,26 +49,12 @@ listItem:
 
 {{> head}}
 <div class="banner" role="banner">
-	<div class="header-page">
-		<nav role="navigation">
-			<ul class="no-bullet">
-			{{#each listItem}}
-				{{#is category 'affiliate'}}
-					{{>list_item}}
-				{{/is}}
-			{{/each}}
-			</ul>
-		</nav>
-		<header class="page-gutter">
-			<h1 class="header-section">{{{header}}}</h1>
-			<h2>Art on the inside, blood on the outside.</h2>
-		</header>
-	</div>
+	{{> header}}
 	{{> slideshow}}
 </div>
 <div role="main">
 	<section class="constrain">
-		<h3 id="projectsHeader" class="header-section">Featured <strong>Projects</strong></h3>
+		<h3 id="projectHeader" class="header-section">Featured <strong>Projects</strong></h3>
 		<div class="tile-row">
 		{{#each tile}}
 			{{>tile}}

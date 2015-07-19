@@ -102,9 +102,12 @@ a {
 }
 
 /* ==========================================================================
-   Slideshow
+   Slideshow & Hero
    ========================================================================== */
-.slideshow-outer {
+
+/* Shared classes
+   ========================================================================== */
+.banner-image {
     position: relative;
     margin-top: @defaultSpacing / 1.4;
 }
@@ -121,6 +124,9 @@ a {
 .no-svg .icon-watermark {
     display: none;
 }
+
+/* Slideshow only
+   ========================================================================== */
 .slideshow {
     font-size: 1.4rem;
     position: relative;
@@ -196,6 +202,9 @@ a {
 .no-cssanimations .slideshow-item img {
     opacity: 1;
 }
+
+/* Hero only
+   ========================================================================== */
 
 /* ==========================================================================
    Tiles
@@ -396,7 +405,7 @@ a {
         margin: @defaultSpacing @defaultSpacing/2.25 @defaultSpacing/1.5 @defaultSpacing/2.25;
     }
 }
-/* Icons
+/* Footer Icons
    ========================================================================== */
 .icon {
     transition: fill 0.24s ease;
@@ -438,7 +447,7 @@ a {
     .header-page h2 {
         text-align: right;
     }
-    .slideshow-outer {
+    .banner-image {
         margin-top: @defaultSpacing / 2;
     }
     .tile {

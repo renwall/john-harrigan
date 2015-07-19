@@ -10,7 +10,7 @@
    		$backToTop = $('#backToTop'),
    		$htmlAndBody = $('html, body'),
    		$window = $(window),
-   		$projectsHeader = $('#projectsHeader'),
+   		$projectsHeader = $('#projectHeader'),
    		scrollTop,
    		offsetTop,
    		currentDate,
@@ -45,10 +45,10 @@
     });
 
     $window.on('scroll', function() {
-    	offsetTop = $projectsHeader.offset().top;
-    	scrollTop = $window.scrollTop();
+      	offsetTop = $projectsHeader.offset().top;
+      	scrollTop = $window.scrollTop();
 
-    	if (scrollTop > offsetTop) {
+      	if (scrollTop > offsetTop) {
             $backToTop.removeClass(hide).addClass(show);
         }
         else {
@@ -63,9 +63,9 @@
 		currentYear = currentDate.getFullYear();
 
 		$currentYear.text(currentYear);
-	   	
+
 	   	return currentYear;
-	}
+	};
 
 	getCurrentYear();
 })();

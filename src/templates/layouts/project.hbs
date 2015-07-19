@@ -1,10 +1,20 @@
----
-filePath: "../"
----
-
 {{> head}}
-<div class="page-content">
-	<h1>{{header}}</h1>
-	{{> body}}
+<div class="banner" role="banner">
+	{{> header}}
+	<div class="banner-image">
+		{{> watermark}}
+		<figure>
+			{{#hero}}
+	    	<img src="assets/{{small}}" srcset="assets/{{medium}} 640w, assets/{{large}} 1024w" alt="{{alt}}">
+	        <figcaption class="visually-hidden">{{caption}}</figcaption>
+	        {{/hero}}
+	    </figure>
+    </div>
+</div>
+<div role="main">
+	<section class="constrain project-content">
+		<h3 id="projectHeader" class="header-section">{{project}}</h3>
+		{{{pageContent}}}
+	</section>	
 </div>
 {{> footer}}
