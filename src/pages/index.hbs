@@ -3,12 +3,12 @@
 title: 'John Harrigan'
 header: 'John <strong>Harrigan</strong>'
 slide:
-  - { filename: 'jh_hero_08.jpg', alt: 'alt one', caption: 'truth' }
-  - { filename: 'jh_hero_09.jpg', alt: 'alt two', caption: 'magick' }
-  - { filename: 'jh_hero_03.jpg', alt: 'alt three', caption: 'art' }
-  - { filename: 'jh_hero_05.jpg', alt: 'alt four', caption: 'journey' }
-  - { filename: 'jh_hero_01.jpg', alt: 'alt five', caption: 'ritual' }
-  - { filename: 'jh_hero_04.jpg', alt: 'alt six', caption: 'solve et coagula' }
+  - { small: 'jh_hero_01_s.jpg', medium: 'jh_hero_01_m.jpg', large: 'jh_hero_01_l.jpg', alt: 'alt one', caption: 'truth' }
+  - { small: 'jh_hero_02_s.jpg', medium: 'jh_hero_02_m.jpg', large: 'jh_hero_02_l.jpg', alt: 'alt two', caption: 'magick' }
+  - { small: 'jh_hero_03_s.jpg', medium: 'jh_hero_03_m.jpg', large: 'jh_hero_03_l.jpg', alt: 'alt three', caption: 'art' }
+  - { small: 'jh_hero_04_s.jpg', medium: 'jh_hero_04_m.jpg', large: 'jh_hero_04_l.jpg', alt: 'alt four', caption: 'journey' }
+  - { small: 'jh_hero_05_s.jpg', medium: 'jh_hero_05_m.jpg', large: 'jh_hero_05_l.jpg', alt: 'alt five', caption: 'sincerity' }
+  - { small: 'jh_hero_06_s.jpg', medium: 'jh_hero_06_m.jpg', large: 'jh_hero_06_l.jpg', alt: 'alt six', caption: 'passion' }
 social:
   - { url: 'https://www.facebook.com/asmadai', title: 'Facebook', id: 'icon-facebook' }
   - { url: 'https://twitter.com/johnharrigan', title: 'Twitter', id: 'icon-twitter' }
@@ -18,19 +18,18 @@ social:
   - { url: 'https://plus.google.com/+JohnHarrigan/posts', title: 'Google+', id: 'icon-googleplus' }
   - { url: 'https://instagram.com/johnharrigan/?hl=en', title: 'Instagram', id: 'icon-instagram' }
 tile:
-  - { title: 'Strange Factories', url: '/', src: 'https://scontent.cdninstagram.com/hphotos-xfa1/t51.2885-15/e15/11324267_678616528909224_1895882165_n.jpg', alt: 'alt' }
-  - { title: 'Project', url: '/', src: 'https://scontent.cdninstagram.com/hphotos-xfa1/t51.2885-15/e15/11324267_678616528909224_1895882165_n.jpg', alt: 'alt' }
-  - { title: 'Project', url: '/', src: 'https://scontent.cdninstagram.com/hphotos-xfa1/t51.2885-15/e15/11324267_678616528909224_1895882165_n.jpg', alt: 'alt' }
-  - { title: 'Project', url: '/', src: 'https://scontent.cdninstagram.com/hphotos-xfa1/t51.2885-15/e15/11324267_678616528909224_1895882165_n.jpg', alt: 'alt' }
-  - { title: 'Project', url: '/', src: 'https://scontent.cdninstagram.com/hphotos-xfa1/t51.2885-15/e15/11324267_678616528909224_1895882165_n.jpg', alt: 'alt' }
-  - { title: 'Project', url: '/', src: 'https://scontent.cdninstagram.com/hphotos-xfa1/t51.2885-15/e15/11324267_678616528909224_1895882165_n.jpg', alt: 'alt' }
+  - { title: 'The Wilderness Festival', url: '/', src: 'assets/jh_projects_01.jpg' }
+  - { title: 'Strange Factories', url: '/', src: 'assets/jh_projects_02.jpg' }
+  - { title: 'Virulent Experience', url: '/', src: 'assets/jh_projects_03.jpg' }
+  - { title: 'Ward 12 - The Basement', url: '/', src: 'assets/jh_projects_04.jpg' }
+  - { title: 'Cirxus', url: '/', src: 'assets/jh_projects_05.jpg' }
+  - { title: 'Dead Language', url: '/', src: 'assets/jh_projects_06.jpg' }
 listItem:
   - { name: 'Contact', url: '/', category: 'affiliate' }
   - { name: 'R&eacute;sum&eacute', url: '/', category: 'affiliate' }
   - { name: 'FoolishPeople', url: 'http://www.foolishpeople.com/', category: 'affiliate' }
-  - { name: 'Strange Factories', url: 'http://www.strangefactories.com/', category: 'affiliate' }
-  - { name: 'The Woods Trapped at the Edge of Midnight (2015)', url: 'http://www.wildernessfestival.com/programme/foolish-people/', category: 'chrono', group: 'recent' }
-  - { name: 'Strange Factories (2013)', url: 'http://www.strangefactories.com/', category: 'chrono', group: 'recent' }
+  - { name: 'The Woods Trapped at the Edge of Midnight (2015)', category: 'chrono', group: 'recent' }
+  - { name: 'Strange Factories (2013)', category: 'chrono', group: 'recent' }
   - { name: 'Virulent Experience (2012)', category: 'chrono', group: 'recent' }
   - { name: 'The Basement - Ward 12 (2010)', category: 'chrono', group: 'recent' }
   - { name: 'A Red Threatening Sky (2010)', category: 'chrono', group: 'recent' }
@@ -62,11 +61,7 @@ listItem:
 
 {{> head}}
 <div class="banner" role="banner">
-	<div class="header-page page-gutter">
-		<header>
-			<h1 class="header-section">{{{header}}}</h1>
-			<h2>Art on the inside, blood on the outside.</h2>
-		</header>
+	<div class="header-page">
 		<nav role="navigation">
 			<ul class="no-bullet">
 			{{#each listItem}}
@@ -76,27 +71,28 @@ listItem:
 			{{/each}}
 			</ul>
 		</nav>
+		<header class="page-gutter">
+			<h1 class="header-section">{{{header}}}</h1>
+			<h2>Art on the inside, blood on the outside.</h2>
+		</header>
 	</div>
 	{{> slideshow}}
 </div>
 <div role="main">
 	<section class="constrain">
-		<h3 class="header-section">Featured <strong>Projects</strong></h3>
+		<h3 id="projectsHeader" class="header-section">Featured <strong>Projects</strong></h3>
 		<div class="tile-row">
-		{{!-- to do: add srcset or move to bg image --}}
 		{{#each tile}}
 			{{>tile}}
 		{{/each}}
 		</div>
 	</section>	
 	<section class="about">
-		<figure class="about-image">
-			{{!-- to do: add srcset or move to bg image --}}
-        	<img src="assets/jh_bio_bw.jpg" alt="alt text"/>
-    	</figure>
+		<figure class="about-image"></figure>
     	<div class="about-bio">
     		<h3 class="header-section">About <strong>John Harrigan</strong></h3>
-    		<p>Bacon ipsum dolor amet andouille doner pork, brisket corned beef strip steak pork loin t-bone meatloaf shoulder. Porchetta pastrami meatloaf t-bone. Ball tip jowl ribeye meatball pig, picanha alcatra cupim ham hock porchetta pork chop flank leberkas fatback.</p>
+    		<p>John Harrigan is writer, director, artist, and the founder of <a href="http://www.foolishpeople.com">FoolishPeople</a>.</p>
+    		<p>Harrigan's work centers on the creation of film, ritual theatre, and installation art. Its aim is to raise a numimous experience within the witness. He has performed at the ICA, the Horse Hospital, Arcola Theatre, and throughout London and the UK. His work has been presented internationally in the United States and Netherlands.</p>
     		<div class="about-callout">
 				<h3 class="header-section">Artist's <strong>Statement</strong></h3>
 				<p>Turducken cupim spare ribs venison hamburger porchetta tongue meatball tenderloin short loin. Kielbasa jerky pork belly pancetta, ball tip cupim tail pork. Ground round turkey shankle swine. Spare ribs pastrami brisket short ribs fatback.</p>

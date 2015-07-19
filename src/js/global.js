@@ -8,7 +8,14 @@
    		isOpen = false,
    		toggleText,
    		$backToTop = $('#backToTop'),
-   		$htmlAndBody = $('html, body');
+   		$htmlAndBody = $('html, body'),
+   		$window = $(window),
+   		$projectsHeader = $('#projectsHeader'),
+   		scrollTop,
+   		offsetTop,
+   		currentDate,
+   		currentYear,
+   		$currentYear = $('#currentYear');
 
    	$showAll.on('click', function(event) {
    		var that = this;
@@ -18,7 +25,7 @@
 
    		if (isOpen === true) {
    			toggleText = 'Show less works';
-   			$earlierWorks.stop(true, true).fadeIn().removeClass(hide).addClass(show);
+   			$earlierWorks.removeClass(hide).addClass(show);
    		}
    		else {
    			toggleText = 'Show more works';
@@ -37,12 +44,25 @@
         that.blur();
     });
 
-   	var getCurrentYear = function() {
-		var currentDate = new Date(),
-			currentYear = currentDate.getFullYear(),
-			elem = document.getElementsByClassName('current-year')[0];
+    $window.on('scroll', function() {
+    	offsetTop = $projectsHeader.offset().top;
+    	scrollTop = $window.scrollTop();
 
-		elem.innerHTML = currentYear;
+    	if (scrollTop > offsetTop) {
+            $backToTop.removeClass(hide).addClass(show);
+        }
+        else {
+            $backToTop.removeClass(show).addClass(hide);
+        }
+
+        $backToTop.blur();
+    });
+
+   	var getCurrentYear = function() {
+		currentDate = new Date();
+		currentYear = currentDate.getFullYear();
+
+		$currentYear.text(currentYear);
 	   	
 	   	return currentYear;
 	}

@@ -1,12 +1,9 @@
 @import 'variables.less';
 @import 'utils.less';
 
-// to do:
-// optimize common styles into mixins
-// rounded corners animate in safari, chrome on tile hover
-// add .no-touch to hover 
-
-
+/* ==========================================================================
+   Global elements
+   ========================================================================== */
 *, *:before, *:after {
     box-sizing: inherit;
 }
@@ -30,10 +27,6 @@ body {
 article, aside, details, figcaption, figure, footer, header, menu, nav, section, summary {
     display: block;
 }
-figure {
-    background: no-repeat 50% 50%;
-    background-position: center;
-}
 img {
     vertical-align: middle;
     height: auto;
@@ -46,23 +39,28 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 1.3;
     font-weight: normal;
 }
-p {
-    line-height: 1.5;
-}
 li {
     line-height: 1.3;
+}
+p {
+    line-height: 1.6;
 }
 a {
     text-decoration: none;
     transition: color 0.24s ease;
     &:link, &:visited {
-        color: @accent;
+        color: @red;
     }
+}
+.no-touch a {
     &:hover, &:focus, &:active {
         color: @grey900;
     }
 }
 
+/* ==========================================================================
+   Header
+   ========================================================================== */
 .header-section {
     font-weight: 100;
     text-transform: uppercase;
@@ -75,45 +73,59 @@ a {
     * {
         margin-top: 0;
     }
-    border-top: @defaultBorderWidth solid @accent;
-    padding: @defaultSpacing/2 @defaultSpacing;
     font-size: .9rem;
-    display: flex;
-    flex-flow: row wrap;
-    align-items: center;
-    .header {
-        flex: 1 auto;
-    }
     nav {
-        display: none;
-        flex: 1 auto;
-        text-align: right;
+        border-bottom: @defaultBorderWidth solid @red;
+        padding: @defaultSpacing / 1.25 @defaultSpacing @defaultSpacing / 2;
         li {
             display: inline-block;
-            margin-left: @defaultSpacing;
+            &:not(:last-child) {
+                margin-right: @defaultSpacing;
+            }
         }
     }
+    header {
+        display: flex;
+        flex-flow: row wrap;
+        align-items: center;
+        margin-top: @defaultSpacing / 1.6;
+    }
     h1 {
+        flex: 1 auto;
         font-size: 2em;
+        padding-right: @defaultSpacing * 2;
     }
     h2 {
-        margin-top: 0;
+        flex: 1 auto;
         font-size: 1em;
     }
 }
 
+/* ==========================================================================
+   Slideshow
+   ========================================================================== */
+.slideshow-outer {
+    position: relative;
+    margin-top: @defaultSpacing / 1.4;
+}
+.icon-watermark {
+    display: none;
+    width: @defaultSpacing * 4;
+    position: absolute;
+    bottom: @defaultSpacing / 1.35;
+    right: @defaultSpacing;
+    fill: rgba(255,255,255,.2);
+    z-index: 1;
+    vertical-align: bottom;
+}
+.no-svg .icon-watermark {
+    display: none;
+}
 .slideshow {
     font-size: 1.4rem;
     position: relative;
     background: @grey900;
     padding-top: 44.42%;
-}
-.slideshow:before {
-    content: url('../assets/fp_logo_nav.jpg');
-    position: absolute;
-    top: @defaultSpacing;
-    left: @defaultSpacing;
-    z-index: 1;
 }
 .slideshow-item img {
     -webkit-backface-visibility: hidden;
@@ -126,7 +138,7 @@ a {
 }
 .slideshow-item figcaption {
     animation: animateCaption 24s linear infinite 0s; 
-    color: @grey50;
+    color: #fff;
     position: absolute;
     left: 0;
     bottom: @defaultSpacing * 1.4;
@@ -185,6 +197,9 @@ a {
     opacity: 1;
 }
 
+/* ==========================================================================
+   Tiles
+   ========================================================================== */
 .tile-row {
     display: flex;
     flex-flow: row wrap;
@@ -194,13 +209,10 @@ a {
 .tile {
     font-size: .9rem;
     position: relative;
-    flex: 1 auto;
+    flex: 1 1 100%;
     margin-top: @defaultSpacing;
     border-radius: @defaultBorderRadius;
     overflow: hidden;
-    figure {
-        position: relative;
-    }
     figcaption {
         position: absolute;
         bottom: 0;
@@ -212,6 +224,14 @@ a {
         padding: @defaultSpacing;
         font-size: 1em;
     }
+    figure {
+        background-color: @red;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        padding-top: 100%;
+        background-blend-mode: normal;
+    }
     a {
         z-index: 1;
         position: absolute;
@@ -221,6 +241,36 @@ a {
         height: 100%;
     }
 }
+.tile:first-child figure {
+    background-image: url('../assets/jh_projects_01.jpg');
+}
+.tile:nth-child(2) figure {
+    background-image: url('../assets/jh_projects_02.jpg');
+}
+.tile:nth-child(3) figure {
+    background-image: url('../assets/jh_projects_03.jpg');
+}
+.tile:nth-child(4) figure {
+    background-image: url('../assets/jh_projects_04.jpg');
+}
+.tile:nth-child(5) figure {
+    background-image: url('../assets/jh_projects_05.jpg');
+}
+.tile:last-child figure {
+    background-image: url('../assets/jh_projects_06.jpg');
+}
+.no-touch .tile:hover {
+    figure {
+        background-blend-mode: multiply;
+    }
+    figcaption {
+        color: @red300;
+    }
+}
+
+/* ==========================================================================
+   About
+   ========================================================================== */
 .about {
     font-size: 1rem;
     display: flex;
@@ -244,11 +294,24 @@ a {
     p {
         font-weight: 300;
     }
+    a:link, a:visited {
+        color: @red400;
+    }
+}
+.no-touch .about-bio a {
+    &:hover, &:focus, &:active {
+        color: @red200;
+    }
 }
 
+/* ==========================================================================
+   Chronology
+   ========================================================================== */
 .chronology {
     font-size: 1rem;
-    background: @grey300;
+    background: url('../assets/jh_chronology.jpg') no-repeat 50% 92% @red;
+    background-size: cover;
+    background-blend-mode: multiply;
     border-radius: @defaultBorderRadius;
     padding: @defaultSpacing;
 }
@@ -264,14 +327,22 @@ a {
 }
 .chronology-list {
     h4 {
-        font-weight: 700;
-        margin-bottom: @defaultSpacing;
+        font-size: 1em;
+        color: @grey50;
+        font-weight: 900;
+        text-transform: uppercase;
     }
-    ul li {
-        display: block;
+    ul {
+        margin-top: @defaultSpacing;
+        li {
+            color: @grey300;
+        }
     }
 }
 
+/* ==========================================================================
+   Buttons
+   ========================================================================== */
 .button {
     padding: @defaultSpacing / 1.5;
     display: inline-block;
@@ -287,32 +358,34 @@ a {
 }
 .back-to-top {
     z-index: 2; 
-    transition: color fill 0.24s ease;
     position: fixed;
     right: 0;
-    bottom: 20%;
+    bottom: 4%;
     border-radius: @defaultBorderRadius 0 0 @defaultBorderRadius;
     box-shadow: 0 1px 2px rgba(0,0,0,.5);
-    &:hover {
-        span {
-            color: #fff;
-        }
-        .icon {
-            transition: none;
-            fill: #fff;
-        }
-    }
     .icon {
+        transition: none;
         display: block;
-        width: @defaultSpacing * 3;
+        width: @defaultSpacing * 2.4;
         margin: 0 auto;
         fill: @grey300;
     }
 }
+.no-touch .back-to-top:hover {
+    span {
+        color: #fff;
+    }
+    .icon {
+        fill: #fff;
+    }
+}
 
+/* ==========================================================================
+   Footer
+   ========================================================================== */
 .footer {
     text-align: center;
-    border-top: @defaultBorderWidth/2 solid @grey700;
+    border-top: @defaultBorderWidth solid @grey700;
     font-size: .8rem;
     padding: 0 @defaultSpacing @defaultSpacing @defaultSpacing;
     nav {
@@ -323,14 +396,16 @@ a {
         margin: @defaultSpacing @defaultSpacing/2.25 @defaultSpacing/1.5 @defaultSpacing/2.25;
     }
 }
+/* Icons
+   ========================================================================== */
 .icon {
     transition: fill 0.24s ease;
     height: 100%;
     fill: @grey700;
     vertical-align: bottom;
-    &:hover {
-        fill: @grey800;
-    }
+}
+.no-touch .icon:hover {
+    fill: @grey800;
 }
 .svg {
     .social {
@@ -352,16 +427,19 @@ a {
     }
 }
 
+/* ==========================================================================
+   Media queries
+   ========================================================================== */
 @media only screen and (min-width: @minMobile) {
-   .header-page nav {
-        display: block;
-        li:nth-child(3), li:last-child {
-            display: none;
-        }
-    }
     .slideshow-item figcaption {
         bottom: @defaultSpacing * 2.4;
         font-size: 2.4em;
+    }
+    .header-page h2 {
+        text-align: right;
+    }
+    .slideshow-outer {
+        margin-top: @defaultSpacing / 2;
     }
     .tile {
         flex: 1 1 calc(50% - @defaultSpacing * 2);
@@ -369,34 +447,11 @@ a {
             margin-right: @defaultSpacing;
         }
     }
-    .chronology-list {
-        h4 {
-            margin-bottom: 0;
-        }
-        & + .chronology-list {
-            margin-top: @defaultSpacing * 2;
-        }
-        ul li {
-            display: inline-block;
-            &:not(:last-child) {
-                margin-right: @defaultSpacing / 2;
-                &:after {
-                    content: '\2022';
-                    margin-left: @defaultSpacing / 2;
-                }
-            }
-        }
-    } 
 }
 
 @media only screen and (min-width: @minTablet) {
     html {
         font-size: @baseFont - 1;
-    }
-    .header-page nav {
-        li:nth-child(3), li:last-child {
-            display: inline-block;
-        }
     }
     .slideshow-item figcaption {
         font-size: 3.4em;
@@ -412,9 +467,15 @@ a {
     .about-image {
         width: 33%;
         display: block;
+        background: url('../assets/jh_bio_bw.jpg') no-repeat 50% 50% @grey900;   
+        background-size: cover; 
+        padding-top: 133.83%;
     }
     .about-bio {
         width: 67%;
+    }
+    .icon-watermark {
+        display: block;
     }
 }
 

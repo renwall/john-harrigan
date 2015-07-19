@@ -1,11 +1,15 @@
-<ul class="slideshow no-bullet" role="banner">
-    {{#each slide}}
-    <li>
-        <figure class="slideshow-item">
-        	{{!-- to do: srcset --}}
-            <img src="assets/{{filename}}" alt="{{alt}}"/>
-            <figcaption>{{caption}}</figcaption>
-        </figure>
-    </li>
-    {{/each}}
-</ul>
+<div class="slideshow-outer">
+	<svg role="img" title="John Harrigan logo" viewBox="0 0 64 64" class="icon-watermark">
+		<use xlink:href="assets/icon-spritemap.svg#icon-jh"></use>
+	</svg>
+	<ul class="slideshow no-bullet" role="banner">	
+	    {{#each slide}}
+	    <li>
+	        <figure class="slideshow-item">
+	        	<img src="assets/{{small}}" srcset="assets/{{medium}} 640w, assets/{{large}} 1024w" alt="{{alt}}">
+	            <figcaption>{{caption}}</figcaption>
+	        </figure>
+	    </li>
+	    {{/each}}
+	</ul>
+</div>

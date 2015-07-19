@@ -21,12 +21,12 @@
 .no-bullet {
   list-style-type: none;
 }
-.fade {
+.no-touch .fade {
   opacity: 1;
   -webkit-transition: opacity 0.24s ease;
           transition: opacity 0.24s ease;
 }
-.fade:hover {
+.no-touch .fade:hover {
   opacity: 0.75;
 }
 .overlay {
@@ -49,6 +49,9 @@
 .hide {
   display: none!important;
 }
+/* ==========================================================================
+   Global elements
+   ========================================================================== */
 *,
 *:before,
 *:after {
@@ -84,10 +87,6 @@ section,
 summary {
   display: block;
 }
-figure {
-  background: no-repeat 50% 50%;
-  background-position: center;
-}
 img {
   vertical-align: middle;
   height: auto;
@@ -114,11 +113,11 @@ h6 {
   line-height: 1.3;
   font-weight: normal;
 }
-p {
-  line-height: 1.5;
-}
 li {
   line-height: 1.3;
+}
+p {
+  line-height: 1.6;
 }
 a {
   text-decoration: none;
@@ -129,11 +128,14 @@ a:link,
 a:visited {
   color: #af111c;
 }
-a:hover,
-a:focus,
-a:active {
+.no-touch a:hover,
+.no-touch a:focus,
+.no-touch a:active {
   color: #212121;
 }
+/* ==========================================================================
+   Header
+   ========================================================================== */
 .header-section {
   font-weight: 100;
   text-transform: uppercase;
@@ -143,9 +145,22 @@ a:active {
   font-weight: 900;
 }
 .header-page {
-  border-top: 4px solid #af111c;
-  padding: 0.5rem 1rem;
   font-size: .9rem;
+}
+.header-page * {
+  margin-top: 0;
+}
+.header-page nav {
+  border-bottom: 3px solid #af111c;
+  padding: 0.8rem 1rem 0.5rem;
+}
+.header-page nav li {
+  display: inline-block;
+}
+.header-page nav li:not(:last-child) {
+  margin-right: 1rem;
+}
+.header-page header {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -157,47 +172,48 @@ a:active {
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
-}
-.header-page * {
-  margin-top: 0;
-}
-.header-page .header {
-  -webkit-box-flex: 1;
-  -webkit-flex: 1 auto;
-      -ms-flex: 1 auto;
-          flex: 1 auto;
-}
-.header-page nav {
-  display: none;
-  -webkit-box-flex: 1;
-  -webkit-flex: 1 auto;
-      -ms-flex: 1 auto;
-          flex: 1 auto;
-  text-align: right;
-}
-.header-page nav li {
-  display: inline-block;
-  margin-left: 1rem;
+  margin-top: 0.625rem;
 }
 .header-page h1 {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1 auto;
+      -ms-flex: 1 auto;
+          flex: 1 auto;
   font-size: 2em;
+  padding-right: 2rem;
 }
 .header-page h2 {
-  margin-top: 0;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1 auto;
+      -ms-flex: 1 auto;
+          flex: 1 auto;
   font-size: 1em;
+}
+/* ==========================================================================
+   Slideshow
+   ========================================================================== */
+.slideshow-outer {
+  position: relative;
+  margin-top: 0.71428571rem;
+}
+.icon-watermark {
+  display: none;
+  width: 4rem;
+  position: absolute;
+  bottom: 0.74074074rem;
+  right: 1rem;
+  fill: rgba(255, 255, 255, 0.2);
+  z-index: 1;
+  vertical-align: bottom;
+}
+.no-svg .icon-watermark {
+  display: none;
 }
 .slideshow {
   font-size: 1.4rem;
   position: relative;
   background: #212121;
   padding-top: 44.42%;
-}
-.slideshow:before {
-  content: url('../assets/fp_logo_nav.jpg');
-  position: absolute;
-  top: 1rem;
-  left: 1rem;
-  z-index: 1;
 }
 .slideshow-item img {
   -webkit-backface-visibility: hidden;
@@ -212,7 +228,7 @@ a:active {
 .slideshow-item figcaption {
   -webkit-animation: animateCaption 24s linear infinite 0s;
           animation: animateCaption 24s linear infinite 0s;
-  color: #fafafa;
+  color: #fff;
   position: absolute;
   left: 0;
   bottom: 1.4rem;
@@ -334,6 +350,9 @@ a:active {
 .no-cssanimations .slideshow-item img {
   opacity: 1;
 }
+/* ==========================================================================
+   Tiles
+   ========================================================================== */
 .tile-row {
   display: -webkit-box;
   display: -webkit-flex;
@@ -352,15 +371,12 @@ a:active {
   font-size: .9rem;
   position: relative;
   -webkit-box-flex: 1;
-  -webkit-flex: 1 auto;
-      -ms-flex: 1 auto;
-          flex: 1 auto;
+  -webkit-flex: 1 1 100%;
+      -ms-flex: 1 1 100%;
+          flex: 1 1 100%;
   margin-top: 1rem;
   border-radius: 3px;
   overflow: hidden;
-}
-.tile figure {
-  position: relative;
 }
 .tile figcaption {
   position: absolute;
@@ -373,6 +389,14 @@ a:active {
   padding: 1rem;
   font-size: 1em;
 }
+.tile figure {
+  background-color: #af111c;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding-top: 100%;
+  background-blend-mode: normal;
+}
 .tile a {
   z-index: 1;
   position: absolute;
@@ -381,6 +405,33 @@ a:active {
   width: 100%;
   height: 100%;
 }
+.tile:first-child figure {
+  background-image: url('../assets/jh_projects_01.jpg');
+}
+.tile:nth-child(2) figure {
+  background-image: url('../assets/jh_projects_02.jpg');
+}
+.tile:nth-child(3) figure {
+  background-image: url('../assets/jh_projects_03.jpg');
+}
+.tile:nth-child(4) figure {
+  background-image: url('../assets/jh_projects_04.jpg');
+}
+.tile:nth-child(5) figure {
+  background-image: url('../assets/jh_projects_05.jpg');
+}
+.tile:last-child figure {
+  background-image: url('../assets/jh_projects_06.jpg');
+}
+.no-touch .tile:hover figure {
+  background-blend-mode: multiply;
+}
+.no-touch .tile:hover figcaption {
+  color: #e69197;
+}
+/* ==========================================================================
+   About
+   ========================================================================== */
 .about {
   font-size: 1rem;
   display: -webkit-box;
@@ -406,9 +457,23 @@ a:active {
 .about-bio p {
   font-weight: 300;
 }
+.about-bio a:link,
+.about-bio a:visited {
+  color: #d7676f;
+}
+.no-touch .about-bio a:hover,
+.no-touch .about-bio a:focus,
+.no-touch .about-bio a:active {
+  color: #f4c5c8;
+}
+/* ==========================================================================
+   Chronology
+   ========================================================================== */
 .chronology {
   font-size: 1rem;
-  background: #e0e0e0;
+  background: url('../assets/jh_chronology.jpg') no-repeat 50% 92% #af111c;
+  background-size: cover;
+  background-blend-mode: multiply;
   border-radius: 3px;
   padding: 1rem;
 }
@@ -434,12 +499,20 @@ a:active {
   text-align: right;
 }
 .chronology-list h4 {
-  font-weight: 700;
-  margin-bottom: 1rem;
+  font-size: 1em;
+  color: #fafafa;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+.chronology-list ul {
+  margin-top: 1rem;
 }
 .chronology-list ul li {
-  display: block;
+  color: #e0e0e0;
 }
+/* ==========================================================================
+   Buttons
+   ========================================================================== */
 .button {
   padding: 0.66666667rem;
   display: inline-block;
@@ -455,31 +528,32 @@ a:active {
 }
 .back-to-top {
   z-index: 2;
-  -webkit-transition: color fill 0.24s ease;
-          transition: color fill 0.24s ease;
   position: fixed;
   right: 0;
-  bottom: 20%;
+  bottom: 4%;
   border-radius: 3px 0 0 3px;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
 }
-.back-to-top:hover span {
-  color: #fff;
-}
-.back-to-top:hover .icon {
+.back-to-top .icon {
   -webkit-transition: none;
           transition: none;
-  fill: #fff;
-}
-.back-to-top .icon {
   display: block;
-  width: 3rem;
+  width: 2.4rem;
   margin: 0 auto;
   fill: #e0e0e0;
 }
+.no-touch .back-to-top:hover span {
+  color: #fff;
+}
+.no-touch .back-to-top:hover .icon {
+  fill: #fff;
+}
+/* ==========================================================================
+   Footer
+   ========================================================================== */
 .footer {
   text-align: center;
-  border-top: 2px solid #616161;
+  border-top: 3px solid #616161;
   font-size: .8rem;
   padding: 0 1rem 1rem 1rem;
 }
@@ -490,6 +564,8 @@ a:active {
   display: inline-block;
   margin: 1rem 0.44444444rem 0.66666667rem 0.44444444rem;
 }
+/* Icons
+   ========================================================================== */
 .icon {
   -webkit-transition: fill 0.24s ease;
           transition: fill 0.24s ease;
@@ -497,7 +573,7 @@ a:active {
   fill: #616161;
   vertical-align: bottom;
 }
-.icon:hover {
+.no-touch .icon:hover {
   fill: #424242;
 }
 .svg .social {
@@ -517,17 +593,19 @@ a:active {
 .no-svg .social-no-svg {
   display: block;
 }
+/* ==========================================================================
+   Media queries
+   ========================================================================== */
 @media only screen and (min-width: 30em) {
-  .header-page nav {
-    display: block;
-  }
-  .header-page nav li:nth-child(3),
-  .header-page nav li:last-child {
-    display: none;
-  }
   .slideshow-item figcaption {
     bottom: 2.4rem;
     font-size: 2.4em;
+  }
+  .header-page h2 {
+    text-align: right;
+  }
+  .slideshow-outer {
+    margin-top: 0.5rem;
   }
   .tile {
     -webkit-box-flex: 1;
@@ -538,30 +616,10 @@ a:active {
   .tile:nth-child(odd) {
     margin-right: 1rem;
   }
-  .chronology-list h4 {
-    margin-bottom: 0;
-  }
-  .chronology-list + .chronology-list {
-    margin-top: 2rem;
-  }
-  .chronology-list ul li {
-    display: inline-block;
-  }
-  .chronology-list ul li:not(:last-child) {
-    margin-right: 0.5rem;
-  }
-  .chronology-list ul li:not(:last-child):after {
-    content: '\2022';
-    margin-left: 0.5rem;
-  }
 }
 @media only screen and (min-width: 45.375em) {
   html {
     font-size: 15px;
-  }
-  .header-page nav li:nth-child(3),
-  .header-page nav li:last-child {
-    display: inline-block;
   }
   .slideshow-item figcaption {
     font-size: 3.4em;
@@ -581,9 +639,15 @@ a:active {
   .about-image {
     width: 33%;
     display: block;
+    background: url('../assets/jh_bio_bw.jpg') no-repeat 50% 50% #212121;
+    background-size: cover;
+    padding-top: 133.83%;
   }
   .about-bio {
     width: 67%;
+  }
+  .icon-watermark {
+    display: block;
   }
 }
 @media only screen and (min-width: 60em) {
