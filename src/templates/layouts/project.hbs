@@ -5,7 +5,7 @@
 		{{> watermark}}
 		<figure>
 			{{#hero}}
-	    	<img src="assets/{{small}}" srcset="assets/{{medium}} 640w, assets/{{large}} 1024w" alt="{{alt}}">
+			<img src="assets/{{small}}" srcset="assets/{{large}} 960w, assets/{{medium}} 726w, assets/{{small}} 480w" sizes="100vw" alt="{{alt}}"/>
 	        <figcaption class="visually-hidden">{{caption}}</figcaption>
 	        {{/hero}}
 	    </figure>
@@ -13,7 +13,8 @@
 </div>
 <div role="main">
 	<section class="constrain project-content">
-		<h3 id="projectHeader" class="header-section">{{project}}</h3>
+		<h3 id="projectHeader" class="header-section">{{{project}}}</h3>
+		<h4 class="subheader-section">{{{credit}}}, {{year}}</h4>
 		{{{pageContent}}}
 	</section>	
 </div>

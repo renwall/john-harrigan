@@ -32,7 +32,7 @@ img {
     height: auto;
     width: 100%;
 }
-ul, figure, p, h1, h2, h3, h4, h5, h6 {
+ul, figure, h1, h2, h3, h4, h5, h6 {
     .no-spacing();
 }
 h1, h2, h3, h4, h5, h6 {
@@ -69,6 +69,11 @@ a {
         font-weight: 900;
     }
 }
+.subheader-section {
+    text-transform: uppercase;
+    line-height: 1.4;
+    color: @grey700;
+}
 .header-page {
     * {
         margin-top: 0;
@@ -94,10 +99,18 @@ a {
         flex: 1 auto;
         font-size: 2em;
         padding-right: @defaultSpacing * 2;
+        a:link, a:visited {
+            color: @grey900;
+        }
     }
     h2 {
         flex: 1 auto;
         font-size: 1em;
+    }
+}
+.no-touch .header-page h1 a {
+    &:hover, &:focus, &:active {
+        color: @red;
     }
 }
 
@@ -222,7 +235,19 @@ a {
     margin-top: @defaultSpacing;
     border-radius: @defaultBorderRadius;
     overflow: hidden;
+    figure {
+        display: flex;
+        flex-flow: column wrap;
+        align-items: stretch;
+        background-color: @red;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        padding-top: 100%;
+        background-blend-mode: normal;
+    }
     figcaption {
+        flex: 1 0 auto;
         position: absolute;
         bottom: 0;
         left: 0;
@@ -231,15 +256,7 @@ a {
         text-align: center;
         text-transform: uppercase;
         padding: @defaultSpacing;
-        font-size: 1em;
-    }
-    figure {
-        background-color: @red;
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
-        padding-top: 100%;
-        background-blend-mode: normal;
+        font-size: .8em;
     }
     a {
         z-index: 1;
@@ -290,15 +307,10 @@ a {
     display: none;
 }
 .about-bio {
-    padding: 0 @defaultSpacing @defaultSpacing @defaultSpacing;
+    padding: 0 @defaultSpacing;
     width: 100%;
-    .header-section {
-        & + p {
-            margin-top: @defaultSpacing / 2;
-        }
-        strong {
-            font-weight: 700;
-        }
+    .header-section strong {
+        font-weight: 700;
     }
     p {
         font-weight: 300;
@@ -477,8 +489,7 @@ a {
         width: 33%;
         display: block;
         background: url('../assets/jh_bio_bw.jpg') no-repeat 50% 50% @grey900;   
-        background-size: cover; 
-        padding-top: 133.83%;
+        background-size: cover;
     }
     .about-bio {
         width: 67%;

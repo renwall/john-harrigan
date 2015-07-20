@@ -89,14 +89,14 @@ module.exports = function(grunt) {
             main: {
                 flatten: true,
                 files: {
-                    'dist/styles/styles.css': 'dist/styles/styles.css'
+                    'dist/styles/styles_prefixed.css': 'dist/styles/styles.css'
                 }
             }
         },
         watch: {
             handlebars: {
                 files: ['**/*.hbs'],
-                tasks: ['assemble']
+                tasks: ['assemble', 'prettify']
             },
             scripts: {
                 files: ['src/js/*.js'],
