@@ -2,19 +2,19 @@
 
 title: 'John Harrigan'
 slide:
-  - { small: 'jh_hero_01_s.jpg', medium: 'jh_hero_01_m.jpg', large: 'jh_hero_01_l.jpg', alt: 'alt one', caption: 'truth' }
-  - { small: 'jh_hero_02_s.jpg', medium: 'jh_hero_02_m.jpg', large: 'jh_hero_02_l.jpg', alt: 'alt two', caption: 'magick' }
-  - { small: 'jh_hero_03_s.jpg', medium: 'jh_hero_03_m.jpg', large: 'jh_hero_03_l.jpg', alt: 'alt three', caption: 'art' }
-  - { small: 'jh_hero_04_s.jpg', medium: 'jh_hero_04_m.jpg', large: 'jh_hero_04_l.jpg', alt: 'alt four', caption: 'journey' }
-  - { small: 'jh_hero_05_s.jpg', medium: 'jh_hero_05_m.jpg', large: 'jh_hero_05_l.jpg', alt: 'alt five', caption: 'sincerity' }
-  - { small: 'jh_hero_06_s.jpg', medium: 'jh_hero_06_m.jpg', large: 'jh_hero_06_l.jpg', alt: 'alt six', caption: 'passion' }
+  - { small: 'jh_hero_01_s.jpg', medium: 'jh_hero_01_m.jpg', large: 'jh_hero_01_l.jpg', alt: 'John sitting on steps', caption: 'truth' }
+  - { small: 'jh_hero_02_s.jpg', medium: 'jh_hero_02_m.jpg', large: 'jh_hero_02_l.jpg', alt: 'John gesturing', caption: 'magick' }
+  - { small: 'jh_hero_03_s.jpg', medium: 'jh_hero_03_m.jpg', large: 'jh_hero_03_l.jpg', alt: 'John pointing', caption: 'art' }
+  - { small: 'jh_hero_04_s.jpg', medium: 'jh_hero_04_m.jpg', large: 'jh_hero_04_l.jpg', alt: 'John and Lucy running', caption: 'journey' }
+  - { small: 'jh_hero_05_s.jpg', medium: 'jh_hero_05_m.jpg', large: 'jh_hero_05_l.jpg', alt: 'John in theatrical makeup', caption: 'sincerity' }
+  - { small: 'jh_hero_06_s.jpg', medium: 'jh_hero_06_m.jpg', large: 'jh_hero_06_l.jpg', alt: 'John on stage', caption: 'passion' }
 tile:
-  - { title: 'The Woods Trapped at the Edge of Midnight', url: 'the-woods-trapped-at-the-edge-of-midnight.html', src: 'assets/jh_projects_01.jpg' }
-  - { title: 'Strange Factories', url: 'strange-factories.html', src: 'assets/jh_projects_02.jpg' }
-  - { title: 'Virulent Experience', url: 'virulent-experience.html', src: 'assets/jh_projects_03.jpg' }
-  - { title: 'Ward 12 - The Basement', url: 'ward-12-the-basement.html', src: 'assets/jh_projects_04.jpg' }
-  - { title: 'Cirxus', url: 'cirxus.html', src: 'assets/jh_projects_05.jpg' }
-  - { title: 'Dead Language', url: 'dead-language.html', src: 'assets/jh_projects_06.jpg' }
+  - { caption: 'The Woods Trapped at the Edge of Midnight', url: 'the-woods-trapped-at-the-edge-of-midnight.html', title: 'The Woods Trapped at the Edge of Midnight' }
+  - { caption: 'Strange Factories', url: 'strange-factories.html', src: 'assets/jh_projects_02.jpg', title: 'Strange Factories' }
+  - { caption: 'Virulent Experience', url: 'virulent-experience.html', title: 'Virulent Experience' }
+  - { caption: 'Ward 12 - The Basement', url: 'ward-12-the-basement.html', title: 'Ward Twelve: The Basement' }
+  - { caption: 'Cirxus', url: 'cirxus.html', title: 'Cirxus'}
+  - { caption: 'Dead Language', url: 'dead-language.html', title: 'Dead Language' }
 listItem:
   - { name: 'The Woods Trapped at the Edge of Midnight (2015)', category: 'chrono', group: 'recent' }
   - { name: 'Strange Factories (2013)', category: 'chrono', group: 'recent' }
@@ -78,9 +78,13 @@ listItem:
 			<h3 class="header-section">
 				<strong>Chronology</strong>
 			</h3>
-			<a id="showAll" href="#">Show more works</a>
+			<a id="showAll" class="toggle-trigger" href="javascript:void(0)" role="button" aria-expanded="false" aria-pressed="false">
+				<span class="moreText">Show more works</span>
+				<span class="lessText">Show less works</span>
+
+			</a>
 		</div>
-		<div class="chronology">
+		<div class="chronology box">
 			<section class="chronology-list">
 				<h4>Recent Works</h4>
 				<ul class="no-bullet">
@@ -91,7 +95,7 @@ listItem:
 				{{/each}}
 				</ul>
 			</section>
-			<section id="earlierWorks" class="chronology-list hide">
+			<section id="earlierWorks" class="chronology-list toggle-pane" aria-hidden="true">
 				<h4>Earlier Works</h4>
 				<ul class="no-bullet">
 				{{#each listItem}}

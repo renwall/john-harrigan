@@ -99,12 +99,13 @@ void 0===c?d&&"get"in d&&null!==(e=d.get(a,b))?e:(e=n.find.attr(a,b),null==e?voi
    		$earlierWorks  = $('#earlierWorks'),
    		show = 'show',
    		hide = 'hide',
+      open = 'open',
    		isOpen = false,
-   		toggleText,
    		$backToTop = $('#backToTop'),
    		$htmlAndBody = $('html, body'),
    		$window = $(window),
    		$projectsHeader = $('#projectHeader'),
+      $h1Link = $('.h1-link'),
    		scrollTop,
    		offsetTop,
    		currentDate,
@@ -118,24 +119,21 @@ void 0===c?d&&"get"in d&&null!==(e=d.get(a,b))?e:(e=n.find.attr(a,b),null==e?voi
    		isOpen = !isOpen;
 
    		if (isOpen === true) {
-   			toggleText = 'Show less works';
-   			$earlierWorks.removeClass(hide).addClass(show);
+        $showAll.addClass(open).attr({'aria-expanded': 'true', 'aria-pressed': 'true'});
+   			$earlierWorks.addClass(open).attr({'aria-hidden': 'false', 'tabindex': '-1'});
    		}
    		else {
-   			toggleText = 'Show more works';
-   			$earlierWorks.removeClass(show).addClass(hide);
+        $showAll.removeClass(open).attr({'aria-expanded': 'false', 'aria-pressed': 'false'});
+   			$earlierWorks.removeClass(open).removeAttr('tabindex').attr('aria-hidden', 'true');
    		}
-
-   		$showAll.text(toggleText);
-   		that.blur();	
 	});
 
-	$backToTop.on('click', function(event) {
-		var that = this;
+  	$backToTop.on('click', function(event) {
+  		var that = this;
 
-		event.preventDefault();
-        $htmlAndBody.animate({scrollTop: 0}, 200, 'swing');
-        that.blur();
+  		event.preventDefault();
+      $htmlAndBody.animate({scrollTop: 0}, 200, 'swing');
+      $h1Link.focus();
     });
 
     $window.on('scroll', function() {
@@ -146,9 +144,8 @@ void 0===c?d&&"get"in d&&null!==(e=d.get(a,b))?e:(e=n.find.attr(a,b),null==e?voi
             $backToTop.removeClass(hide).addClass(show);
         }
         else {
-            $backToTop.removeClass(show).addClass(hide);
+          $backToTop.removeClass(show).addClass(hide);
         }
-
         $backToTop.blur();
     });
 

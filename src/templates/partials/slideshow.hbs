@@ -1,10 +1,11 @@
 <div class="banner-image">
+	<span class="visually-hidden">Slideshow with captions</span>
 	{{> watermark}}
 	<ul class="slideshow no-bullet" role="banner">	
 	    {{#each slide}}
 	    <li>
 	        <figure class="slideshow-item">
-	        	<img src="assets/{{small}}" srcset="assets/{{large}} 960w, assets/{{medium}} 726w, assets/{{small}} 480w" sizes="100vw" alt="{{alt}}"/>
+	        	<img src="assets/{{large}}" srcset="assets/{{large}} 960w, assets/{{medium}} 726w, assets/{{small}} 480w" sizes="100vw" alt="{{alt}}"/>
 	            <figcaption>{{caption}}</figcaption>
 	        </figure>
 	    </li>

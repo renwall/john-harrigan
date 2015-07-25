@@ -5,8 +5,9 @@
 		{{> watermark}}
 		<figure>
 			{{#hero}}
-			<img src="assets/{{small}}" srcset="assets/{{large}} 960w, assets/{{medium}} 726w, assets/{{small}} 480w" sizes="100vw" alt="{{alt}}"/>
-	        <figcaption class="visually-hidden">{{caption}}</figcaption>
+			{{#if heroUrl}}<a href="{{{heroUrl}}}">{{/if}}
+				<img src="assets/{{large}}" srcset="assets/{{large}} 960w, assets/{{medium}} 726w, assets/{{small}} 480w" sizes="100vw" alt="{{alt}}"/>
+			{{#if heroUrl}}</a>{{/if}}
 	        {{/hero}}
 	    </figure>
     </div>
@@ -16,6 +17,17 @@
 		<h3 id="projectHeader" class="header-section">{{{project}}}</h3>
 		<h4 class="subheader-section">{{{credit}}}, {{year}}</h4>
 		{{{pageContent}}}
+		
+		{{#if video}}
+			{{#video}}
+			<figure class="video">
+				<div class="video-inner">
+					<iframe width="560" height="315" src="{{{videoUrl}}}?html5=1&amp;rel=0&amp;color=white&amp;showinfo=0&amp;modestbranding=1" frameborder="0" allowfullscreen></iframe>
+				</div>
+				<figcaption><span class="visually-hidden">Video: </span>{{{title}}}</figcaption>
+			</figure>
+			{{/video}}
+		{{/if}}
 	</section>	
 </div>
 {{> footer}}
