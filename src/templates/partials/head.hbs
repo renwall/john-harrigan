@@ -1,18 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<link href='http://fonts.googleapis.com/css?family=Roboto:400,100,900,700' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Roboto:400,100,900,400italic' rel='stylesheet' type='text/css'>
     	<meta charset="utf-8" />
-    	<title>{{title}}</title>
+    	<title>{{pageTitle}}</title>
+    	<meta name="description" content="{{{pageDesc}}}"/>
     	<script src="js/bundled.min.js" async defer></script>
     	<link rel="stylesheet" type="text/css" href="styles/styles_prefixed.css">
 		<meta name="author" content="Renee Wall, www.reneewall.com"/>
-		<meta property="og:description" content=""/>
-		<meta property="og:image" content="http://johnharrigan.com/images/share.png">
-		<meta property="og:site_name" content="johnharrigan.com"/>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 		<meta name="viewport" content="width=device-width,initial-scale=1"> 
-		<link rel="icon" href="favicon.ico">
-		<link rel="canonical" href="http://www.johnharrigan.com/"/>
+		<link rel="icon" href="favicon.png">
+		<link rel="apple-touch-icon" href="assets/icon_180x180.png">
+		<meta property="og:site_name" content="{{pageTitle}}"/>
+		<meta property="og:url" content="{{{pageUrl}}}"/>
+		<meta property="og:description" content="{{{pageDesc}}}"/>
+		<meta property="og:image" content="http://www.johnharrigan.com/assets/icon_200x200.png"/>
+		<link rel="canonical" href="{{{pageUrl}}}"/>
   	</head>
   	<body>

@@ -1,6 +1,8 @@
 ---
 
-title: 'John Harrigan'
+pageTitle: 'John Harrigan'
+pageUrl: 'http://www.johnharrigan.com/'
+pageDesc: 'John Harrigan is writer, director, artist, and the founder of FoolishPeople.'
 slide:
   - { small: 'jh_hero_01_s.jpg', medium: 'jh_hero_01_m.jpg', large: 'jh_hero_01_l.jpg', alt: 'John sitting on steps', caption: 'truth' }
   - { small: 'jh_hero_02_s.jpg', medium: 'jh_hero_02_m.jpg', large: 'jh_hero_02_l.jpg', alt: 'John gesturing', caption: 'magick' }
@@ -9,12 +11,12 @@ slide:
   - { small: 'jh_hero_05_s.jpg', medium: 'jh_hero_05_m.jpg', large: 'jh_hero_05_l.jpg', alt: 'John in theatrical makeup', caption: 'sincerity' }
   - { small: 'jh_hero_06_s.jpg', medium: 'jh_hero_06_m.jpg', large: 'jh_hero_06_l.jpg', alt: 'John on stage', caption: 'passion' }
 tile:
-  - { caption: 'The Woods Trapped at the Edge of Midnight', url: 'the-woods-trapped-at-the-edge-of-midnight.html', title: 'The Woods Trapped at the Edge of Midnight' }
-  - { caption: 'Strange Factories', url: 'strange-factories.html', src: 'assets/jh_projects_02.jpg', title: 'Strange Factories' }
-  - { caption: 'Virulent Experience', url: 'virulent-experience.html', title: 'Virulent Experience' }
-  - { caption: 'Ward 12 - The Basement', url: 'ward-12-the-basement.html', title: 'Ward Twelve: The Basement' }
-  - { caption: 'Cirxus', url: 'cirxus.html', title: 'Cirxus'}
-  - { caption: 'Dead Language', url: 'dead-language.html', title: 'Dead Language' }
+  - { caption: 'The Woods Trapped at the Edge of Midnight', url: 'the-woods-trapped-at-the-edge-of-midnight', title: 'The Woods Trapped at the Edge of Midnight' }
+  - { caption: 'Strange Factories', url: 'strange-factories', src: 'assets/jh_projects_02.jpg', title: 'Strange Factories' }
+  - { caption: 'Virulent Experience', url: 'virulent-experience', title: 'Virulent Experience' }
+  - { caption: 'Ward 12 - The Basement', url: 'ward-12-the-basement', title: 'Ward Twelve: The Basement' }
+  - { caption: 'Cirxus', url: 'cirxus', title: 'Cirxus'}
+  - { caption: 'Dead Language', url: 'dead-language', title: 'Dead Language' }
 listItem:
   - { name: 'The Woods Trapped at the Edge of Midnight (2015)', category: 'chrono', group: 'recent' }
   - { name: 'Strange Factories (2013)', category: 'chrono', group: 'recent' }
@@ -86,7 +88,9 @@ listItem:
 		</div>
 		<div class="chronology box">
 			<section class="chronology-list">
-				<h4>Recent Works</h4>
+				<h4 class="header-section">
+					<strong>Recent Works</strong>
+				</h4>
 				<ul class="no-bullet">
 				{{#each listItem}}
 					{{#is group 'recent'}}
@@ -96,7 +100,9 @@ listItem:
 				</ul>
 			</section>
 			<section id="earlierWorks" class="chronology-list toggle-pane" aria-hidden="true">
-				<h4>Earlier Works</h4>
+				<h4 class="header-section">
+					<strong>Earlier Works</strong>
+				</h4>
 				<ul class="no-bullet">
 				{{#each listItem}}
 					 {{#is group 'early'}}
