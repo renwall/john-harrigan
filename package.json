@@ -13,7 +13,6 @@
     "grunt-prettify": "^0.4.0",
     "grunt-svg-cleaner": "^1.0.1",
     "handlebars": "^3.0.0",
-    "helper-moment": "^0.1.0",
     "matchdep": "^0.3.0"
   },
   "dependencies": {
