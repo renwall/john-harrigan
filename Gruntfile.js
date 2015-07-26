@@ -1,10 +1,6 @@
 module.exports = function(grunt) {
     'use strict';
 
-    // format is destination file: source file
-
-    // to do: jslint and accessibility audit
-
     require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
 
     grunt.initConfig({
@@ -39,6 +35,14 @@ module.exports = function(grunt) {
                 dest: 'dist/'
             }
         },
+        accessibility: {
+            options : {
+                accessibilityLevel: 'WCAG2AA'
+            },
+            test : {
+                src: ['dist/*.html']
+            }
+        },
         jshint: {
             files: 'src/js/global.js',
             options: {
@@ -61,6 +65,16 @@ module.exports = function(grunt) {
               files: {
                 'dist/js/bundled.min.js': 'dist/js/bundled.js'
               }
+            }
+        },
+        imagemin: {
+            dynamic: {
+                files: [{
+                    expand: true,
+                    cwd: 'src/assetsUnmin/',
+                    src: ['**/*.{png,jpg}'],
+                    dest: 'dist/assets/'
+                }]
             }
         },
         svg_cleaner: {
@@ -110,6 +124,10 @@ module.exports = function(grunt) {
                 files: ['dist/styles/styles.css'],
                 tasks: ['autoprefixer']
             },
+            images: {
+                files: ['src/assetsUnmin/*.jpg, src/assetsUnmin/*.png'],
+                tasks: ['imagemin']
+            },
             svg: {
                 files: ['src/svg/icon-spritemap.svg'],
                 tasks: ['svg_cleaner']
@@ -119,5 +137,5 @@ module.exports = function(grunt) {
 
     grunt.loadNpmTasks('assemble');
 
-    grunt.registerTask('default', ['assemble', 'prettify', 'svg_cleaner', 'less', 'jshint', 'concat', 'uglify', 'autoprefixer', 'watch']);
+    grunt.registerTask('default', ['assemble', 'prettify', 'accessibility', 'imagemin', 'svg_cleaner', 'less', 'jshint', 'concat', 'uglify', 'autoprefixer', 'watch']);
 };
