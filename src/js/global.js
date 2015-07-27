@@ -10,10 +10,8 @@
    		$backToTop = $('#backToTop'),
    		$htmlAndBody = $('html, body'),
    		$window = $(window),
-   		$projectsHeader = $('#projectHeader'),
       $h1Link = $('.h1-link'),
    		scrollTop,
-   		offsetTop,
    		currentDate,
    		currentYear,
    		$currentYear = $('#currentYear');
@@ -44,23 +42,24 @@
     });
 
     $window.on('scroll', function() {
-      	offsetTop = $projectsHeader.offset().top;
-      	scrollTop = $window.scrollTop();
+      var that = this,
+          threshold = 300;
 
-      	if (scrollTop > offsetTop) {
-            $backToTop.removeClass(hide).addClass(show);
-        }
-        else {
-          $backToTop.removeClass(show).addClass(hide);
-        }
-        $backToTop.blur();
+      if ($(that).scrollTop() >= threshold) {
+        $backToTop.removeClass(hide).addClass(show);
+      }
+      else {
+        $backToTop.removeClass(show).addClass(hide);
+      }
+
+      $backToTop.blur();
     });
 
    	var getCurrentYear = function() {
-		currentDate = new Date();
-		currentYear = currentDate.getFullYear();
+		  currentDate = new Date();
+		  currentYear = currentDate.getFullYear();
 
-		$currentYear.text(currentYear);
+		  $currentYear.text(currentYear);
 
 	   	return currentYear;
 	};

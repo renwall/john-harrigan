@@ -43,8 +43,23 @@
 .hide {
 	display: none!important;
 }
-.one-up {
-	flex: 1 1 100%;
+.one-up() {
+	flex: 1 0 100%;
+}
+.two-up() {
+	flex: 1 0 48%; // needed for IE10 and 11, because IE.
+    flex: 1 0 calc(50% - @defaultSpacing * 2);
+    &:nth-child(odd) {
+        margin-right: @defaultSpacing;
+    }
+}
+.three-up() {
+	flex: 1 0 31%; // needed for IE10 and 11, because IE.
+    flex: 1 0 calc(33.33% - @defaultSpacing * 2);
+    margin-right: @defaultSpacing;
+    &:nth-child(3), &:nth-child(6) {
+        margin-right: 0;
+    }
 }
 .cf {
 	&:before, &:after {
