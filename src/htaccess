@@ -1,0 +1,64 @@
+# BEGIN Compress text files
+<ifModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/xml text/css text/plain
+  AddOutputFilterByType DEFLATE image/svg+xml application/xhtml+xml application/xml
+  AddOutputFilterByType DEFLATE application/rdf+xml application/rss+xml application/atom+xml
+  AddOutputFilterByType DEFLATE text/javascript application/javascript application/x-javascript application/json
+  AddOutputFilterByType DEFLATE application/x-font-ttf application/x-font-otf
+  AddOutputFilterByType DEFLATE font/truetype font/opentype
+</ifModule>
+# END Compress text files
+ 
+# BEGIN Expire headers
+<ifModule mod_expires.c>
+  ExpiresActive On
+  ExpiresDefault "access plus 3 days"
+  ExpiresByType text/css "access plus 1 week"
+  ExpiresByType text/plain "access plus 1 month"
+  ExpiresByType image/gif "access plus 1 month"
+  ExpiresByType image/png "access plus 1 month"
+  ExpiresByType image/jpeg "access plus 1 month"
+  ExpiresByType image/svg+xml "access plus 1 year"
+  ExpiresByType image/x-icon "access plus 1 year"
+  ExpiresByType text/javascript "access plus 216000 seconds"
+  ExpiresByType application/javascript "access plus 216000 seconds"
+  ExpiresByType application/x-javascript "access plus 216000 seconds"
+  ExpiresByType application/vnd.ms-fontobject "access plus 1 year"
+  ExpiresByType font/ttf "access plus 1 year"
+  ExpiresByType font/otf "access plus 1 year"
+  ExpiresByType font/x-woff "access plus 1 year"
+</ifModule>
+# END Expire headers
+
+# BEGIN Add correct content-type for fonts 
+AddType application/vnd.ms-fontobject .eot
+AddType font/ttf .ttf
+AddType font/otf .otf
+AddType font/x-woff .woff
+AddType image/svg+xml .svg
+# END Add correct content-type for fonts 
+
+# BEGIN Compress compressible fonts
+AddOutputFilterByType DEFLATE font/ttf font/otf image/svg+xml
+# END Compress compressible fonts
+ 
+# BEGIN Cache-Control Headers
+<ifModule mod_headers.c>
+  <filesMatch ".(ico|jpe?g|png|gif|svg)$">
+    Header set Cache-Control "public"
+  </filesMatch>
+  <filesMatch ".(css)$">
+    Header set Cache-Control "public"
+  </filesMatch>
+  <filesMatch ".(min.js)$">
+    Header set Cache-Control "public"
+  </filesMatch>
+  <filesMatch ".(js)$">
+    Header set Cache-Control "public"
+  </filesMatch>
+</ifModule>
+# END Cache-Control Headers
+ 
+# BEGIN Turn ETags Off
+FileETag None
+# END Turn ETags Off

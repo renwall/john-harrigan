@@ -70,9 +70,16 @@ a {
         font-weight: 900;
     }
 }
+h3.header-section {
+    padding-top: .09375em;
+}
+.project-content .header-section {
+    font-weight: 900;
+}
 .subheader-section {
     text-transform: uppercase;
     font-weight: 100;
+    margin-top: @defaultSpacing / 4;
 }
 .header-page {
     * {
@@ -98,7 +105,7 @@ a {
     h1 {
         flex: 1 auto;
         font-size: 2em;
-        padding-right: @defaultSpacing * 2;
+        padding: 0 @defaultSpacing * 2 .0625em 0;
         a:link, a:visited {
             color: @grey900;
         }
@@ -112,9 +119,6 @@ a {
     &:hover, &:focus, &:active {
         color: @red;
     }
-}
-.project-content .subheader-section {
-    margin-top: @defaultSpacing / 3;
 }
 
 /* ==========================================================================
@@ -412,8 +416,8 @@ a {
     .icon {
         transition: none;
         display: block;
-        width: @defaultSpacing * 2;
-        height: @defaultSpacing * 2; // height is needed for IE10/11
+        width: @defaultSpacing * 2.5;
+        height: @defaultSpacing * 2.5; // height is needed for IE10/11
         margin: 0 auto;
         fill: @grey300;
     }
